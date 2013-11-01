@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @materiales_event.user %>
+</p>
+
+<p>
+  <strong>Obj:</strong>
+  <%= @materiales_event.obj %>
+</p>
+
+<p>
+  <strong>Event:</strong>
+  <%= @materiales_event.event %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @materiales_event.quantity %>
+</p>
+
+<p>
+  <strong>Remark:</strong>
+  <%= @materiales_event.remark %>
+</p>
+
+<%= link_to 'Edit', edit_materiales_event_path(@materiales_event) %> |
+<%= link_to 'Back', materiales_events_path %>

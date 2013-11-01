@@ -1,0 +1,35 @@
+<h1>Listing materiales_events</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Obj</th>
+      <th>Event</th>
+      <th>Quantity</th>
+      <th>Remark</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @materiales_events.each do |materiales_event| %>
+      <tr>
+        <td><%= materiales_event.user %></td>
+        <td><%= materiales_event.obj %></td>
+        <td><%= materiales_event.event %></td>
+        <td><%= materiales_event.quantity %></td>
+        <td><%= materiales_event.remark %></td>
+        <td><%= link_to 'Show', materiales_event %></td>
+        <td><%= link_to 'Edit', edit_materiales_event_path(materiales_event) %></td>
+        <td><%= link_to 'Destroy', materiales_event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Materiales event', new_materiales_event_path %>

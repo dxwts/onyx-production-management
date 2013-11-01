@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  onyx_p_n: MyString
+  type: 
+  description: MyString
+  p_n: MyString
+  substitute_code: MyString
+  substitute_p_n: MyString
+  footprint: MyString
+  mark: MyString
+  level: MyString
+  remark: MyString
+  manufacture: MyString
+  quantity: 1
+  lower_limit: 1
+  role: MyString
+
+two:
+  name: MyString
+  onyx_p_n: MyString
+  type: 
+  description: MyString
+  p_n: MyString
+  substitute_code: MyString
+  substitute_p_n: MyString
+  footprint: MyString
+  mark: MyString
+  level: MyString
+  remark: MyString
+  manufacture: MyString
+  quantity: 1
+  lower_limit: 1
+  role: MyString

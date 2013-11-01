@@ -1,0 +1,55 @@
+<h1>Listing materiales</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Onyx p n</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>P n</th>
+      <th>Substitute code</th>
+      <th>Substitute p n</th>
+      <th>Footprint</th>
+      <th>Mark</th>
+      <th>Level</th>
+      <th>Remark</th>
+      <th>Manufacture</th>
+      <th>Quantity</th>
+      <th>Lower limit</th>
+      <th>Role</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @materiales.each do |materiale| %>
+      <tr>
+        <td><%= materiale.name %></td>
+        <td><%= materiale.onyx_p_n %></td>
+        <td><%= materiale.type %></td>
+        <td><%= materiale.description %></td>
+        <td><%= materiale.p_n %></td>
+        <td><%= materiale.substitute_code %></td>
+        <td><%= materiale.substitute_p_n %></td>
+        <td><%= materiale.footprint %></td>
+        <td><%= materiale.mark %></td>
+        <td><%= materiale.level %></td>
+        <td><%= materiale.remark %></td>
+        <td><%= materiale.manufacture %></td>
+        <td><%= materiale.quantity %></td>
+        <td><%= materiale.lower_limit %></td>
+        <td><%= materiale.role %></td>
+        <td><%= link_to 'Show', materiale %></td>
+        <td><%= link_to 'Edit', edit_materiale_path(materiale) %></td>
+        <td><%= link_to 'Destroy', materiale, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Materiale', new_materiale_path %>
