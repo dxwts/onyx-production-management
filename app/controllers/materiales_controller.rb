@@ -1,33 +1,41 @@
 class MaterialesController < ApplicationController
-  before_action :set_materiale, only: [:show, :edit, :update, :destroy]
+  before_action :set_materiale, only: [:show, :edit, :update, :destroy, :update_materiale]
 
   # GET /materiales
   # GET /materiales.json
   def index
     @materiales = Materiale.all
+    @events = Event.all
   end
 
   # GET /materiales/1
   # GET /materiales/1.json
   def show
+    @materiales_events = MaterialesEvent.where(:materiale_id => @materiale._id)
   end
 
   # GET /materiales/new
   def new
     @materiale = Materiale.new
+    @types = Type.all
   end
 
   # GET /materiales/1/edit
   def edit
+    @types = Type.all
   end
 
   # POST /materiales
   # POST /materiales.json
   def create
     @materiale = Materiale.new(materiale_params)
-
+    @event = MaterialesEvent.new
+    @event.obj = @materiale.name
+    @event.quantity = @materiale.quantity
+    @event.event = "create"
     respond_to do |format|
       if @materiale.save
+        @materiale.materiales_event << @event
         format.html { redirect_to @materiale, notice: 'Materiale was successfully created.' }
         format.json { render action: 'show', status: :created, location: @materiale }
       else
@@ -40,8 +48,13 @@ class MaterialesController < ApplicationController
   # PATCH/PUT /materiales/1
   # PATCH/PUT /materiales/1.json
   def update
+    @event = MaterialesEvent.new
+    @event.obj = @materiale.name
+    @event.quantity = materiale_params[:quantity]
+    @event.event = "rset"
     respond_to do |format|
       if @materiale.update(materiale_params)
+        @materiale.materiales_event << @event
         format.html { redirect_to @materiale, notice: 'Materiale was successfully updated.' }
         format.json { head :no_content }
       else
@@ -61,6 +74,30 @@ class MaterialesController < ApplicationController
     end
   end
 
+
+  def update_materiale
+    # if params[:ctrl] === "plus"
+    #   @quantity = @materiale.quantity + params[:quantity].to_i
+    # elsif params[:ctrl] === "minus"
+    #   @quantity = @materiale.quantity - params[:quantity].to_i
+    #   if @quantity < 0
+    #     @quantity = 0
+    #   end
+    # end
+    @event = MaterialesEvent.new
+    @event.obj = @materiale.name
+    @event.quantity = params[:quantity]
+    @event.event =  params[:event]
+    @event.remark = params[:remark]
+    # if @materiale.update_attribute(:quantity, @quantity)
+      @materiale.materiales_event << @event
+      respond_to do |format|
+        format.html { redirect_to :back }
+        format.json { head :no_content }
+      # end
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_materiale
@@ -71,4 +108,4 @@ class MaterialesController < ApplicationController
     def materiale_params
       params.require(:materiale).permit(:name, :onyx_p_n, :type, :description, :p_n, :substitute_code, :substitute_p_n, :footprint, :mark, :level, :remark, :manufacture, :quantity, :lower_limit, :role)
     end
-end
+  end

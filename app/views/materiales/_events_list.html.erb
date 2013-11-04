@@ -1,0 +1,39 @@
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading"><h4>Listing materiales_events</h4></div>
+  <div class="panel-body">
+    <table class="table table-condensed">
+      <thead>
+        <tr>
+          <th>User</th>
+          <th>Obj</th>
+          <th>Event</th>
+          <th>Quantity</th>
+          <th>Remark</th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <%@total = 0%>
+        <% @materiales_events.each do |materiales_event| %>
+        <%@total = @total + materiales_event.quantity%>
+        <tr>
+          <td><%= materiales_event.user %></td>
+          <td><%= materiales_event.obj %></td>
+          <td><%= materiales_event.event %></td>
+          <td><%= materiales_event.quantity %></td>
+          <td><%= materiales_event.remark %></td>
+          <!-- <td><%= button_to "Show", materiales_event, :class => "btn btn-info", :method => :get %></td> -->
+          <td><%= button_to "Destroy", materiales_event, :class => "btn btn-danger", :method => :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+  </div>
+  <div class="panel-footer panel-footer-aligin-left">
+    <h3>Total : <%= @total%></h3>
+  </div>
+</div>

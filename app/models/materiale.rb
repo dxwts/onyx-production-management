@@ -1,5 +1,7 @@
 class Materiale
   include Mongoid::Document
+  include Mongoid::Timestamps
+
   field :name, type: String
   field :onyx_p_n, type: String
   field :type, type: String
@@ -12,7 +14,9 @@ class Materiale
   field :level, type: String
   field :remark, type: String
   field :manufacture, type: String
-  field :quantity, type: Integer
-  field :lower_limit, type: Integer
+  field :quantity, type: Integer, default: 0
+  field :lower_limit, type: Integer, default: 0
   field :role, type: String
+
+  has_many :materiales_event
 end

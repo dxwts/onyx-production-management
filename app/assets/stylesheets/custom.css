@@ -1,0 +1,30 @@
+body {
+  padding-top: 50px;
+}
+.template {
+  padding: 40px 15px;
+  /*text-align: center;*/
+}
+
+.header-title {
+  color: white;
+}
+
+.tools-bar {
+    text-align: right;
+    padding: 15px 40px;
+}
+
+.test {
+    color: red;
+}
+
+.new_form {
+    margin-left:auto;
+    margin-right:auto;
+    width: 60%;
+}
+
+.panel-footer-aligin-left {
+    text-align: center;
+}

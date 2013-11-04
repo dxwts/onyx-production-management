@@ -1,15 +1,20 @@
 <h1>Listing materiales</h1>
 
-<table>
+<div class="tools-bar">
+<%= button_to "New Materiale", new_materiale_path,
+      :class => "btn btn-success", :method => :get %>
+</div>
+
+<table class="table table-condensed">
   <thead>
     <tr>
       <th>Name</th>
-      <th>Onyx p n</th>
+      <th>Onyx P/N</th>
       <th>Type</th>
       <th>Description</th>
-      <th>P n</th>
+      <th>P/N</th>
       <th>Substitute code</th>
-      <th>Substitute p n</th>
+      <th>Substitute P/N</th>
       <th>Footprint</th>
       <th>Mark</th>
       <th>Level</th>
@@ -21,12 +26,18 @@
       <th></th>
       <th></th>
       <th></th>
+      <th></th>
     </tr>
   </thead>
 
   <tbody>
     <% @materiales.each do |materiale| %>
+    <% if materiale.quantity <= materiale.lower_limit%>
+      <tr class="danger">
+      <%else%>
       <tr>
+    <%end%>
+        <td hidden><%= materiale._id %></td>
         <td><%= materiale.name %></td>
         <td><%= materiale.onyx_p_n %></td>
         <td><%= materiale.type %></td>
@@ -42,9 +53,15 @@
         <td><%= materiale.quantity %></td>
         <td><%= materiale.lower_limit %></td>
         <td><%= materiale.role %></td>
-        <td><%= link_to 'Show', materiale %></td>
-        <td><%= link_to 'Edit', edit_materiale_path(materiale) %></td>
-        <td><%= link_to 'Destroy', materiale, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#update_materiale" onclick="set_data($(this).parent().parent(), 'plus')">
+              <span class="glyphicon glyphicon-plus"></span></button></td>
+        <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#update_materiale" onclick="set_data($(this).parent().parent(), 'minus')">
+              <span class="glyphicon glyphicon-minus"></span></button></td>
+        <td><%= button_to "Show", materiale, :class => "btn btn-info", :method => :get %></td>
+        <!-- <td><%= link_to 'Edit', edit_materiale_path(materiale) %></td> -->
+        <!-- <td><button type="button" class="btn btn-danger"><%= link_to 'Destroy', materiale, method: :delete, data: { confirm: 'Are you sure?' } %> -->
+        <td><%= button_to "Destroy", materiale, :class => "btn btn-danger", :method => :delete, data: { confirm: 'Are you sure?' } %></td>
+     
       </tr>
     <% end %>
   </tbody>
@@ -52,4 +69,9 @@
 
 <br>
 
-<%= link_to 'New Materiale', new_materiale_path %>
+
+<%= render "update_materiale" %>
+
+
+
+
