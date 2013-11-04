@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://ruby.taobao.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
@@ -34,7 +34,9 @@ end
 
 gem 'mongoid', git: 'https://github.com/mongoid/mongoid.git'
 gem "bson_ext"
-
+# gem 'will_paginate', git: 'git@github.com:mislav/will_paginate.git'
+gem "will_paginate_mongoid"
+gem 'bootstrap-will_paginate'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

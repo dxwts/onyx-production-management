@@ -6,6 +6,11 @@ require "action_mailer/railtie"
 # require "active_resource/railtie"
 require "sprockets/railtie"
 require "rails/test_unit/railtie"
+# require "will_paginate"
+# require 'will_paginate/mongoid'
+require 'will_paginate_mongoid'
+
+require "bootstrap-will_paginate"
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.

@@ -1,17 +1,25 @@
 class MaterialesController < ApplicationController
   before_action :set_materiale, only: [:show, :edit, :update, :destroy, :update_materiale]
+  WillPaginate.per_page = 15
+
 
   # GET /materiales
   # GET /materiales.json
   def index
-    @materiales = Materiale.all
+    create_test_data
+    @materiales = Materiale.paginate(:page => params[:page])
     @events = Event.all
   end
 
   # GET /materiales/1
   # GET /materiales/1.json
   def show
-    @materiales_events = MaterialesEvent.where(:materiale_id => @materiale._id)
+    @materiales_events = MaterialesEvent.where(:materiale_id => @materiale._id).paginate(:page => params[:page])
+    @total = 0
+    @events = MaterialesEvent.where(:materiale_id => @materiale._id)
+    @events.each do |event|
+      @total = @total + event.quantity
+    end
   end
 
   # GET /materiales/new
@@ -90,11 +98,22 @@ class MaterialesController < ApplicationController
     @event.event =  params[:event]
     @event.remark = params[:remark]
     # if @materiale.update_attribute(:quantity, @quantity)
-      @materiale.materiales_event << @event
-      respond_to do |format|
-        format.html { redirect_to :back }
-        format.json { head :no_content }
+    @materiale.materiales_event << @event
+    respond_to do |format|
+      format.html { redirect_to :back }
+      format.json { head :no_content }
       # end
+    end
+  end
+
+  def create_test_data
+    @materiales = Materiale.all
+    if @materiales.size < 100
+      100.times {
+        @materiale = Materiale.new
+        @materiale.name = 1
+        @materiale.save
+      }
     end
   end
 

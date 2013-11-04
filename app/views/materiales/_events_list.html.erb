@@ -1,7 +1,17 @@
 
 
 <div class="panel panel-primary">
-  <div class="panel-heading"><h4>Listing materiales_events</h4></div>
+  <div class="panel-heading">
+    <div class="row">
+      <div class="col-xs-5">
+        <h4>Listing materiales_events</h4>
+      </div>
+      <div class="col-xs-5 panel-aligin-left row">
+        <h4 class="col-xs-5">Quantity : <%= @materiale.quantity %></h4>
+        <h4 class="col-xs-5">Total : <%= @total%></h4>
+      </div>
+    </div>
+  </div>
   <div class="panel-body">
     <table class="table table-condensed">
       <thead>
@@ -16,9 +26,7 @@
       </thead>
 
       <tbody>
-        <%@total = 0%>
         <% @materiales_events.each do |materiales_event| %>
-        <%@total = @total + materiales_event.quantity%>
         <tr>
           <td><%= materiales_event.user %></td>
           <td><%= materiales_event.obj %></td>
@@ -33,7 +41,10 @@
     </table>
 
   </div>
-  <div class="panel-footer panel-footer-aligin-left">
-    <h3>Total : <%= @total%></h3>
+  <div class="panel-aligin-center">
+    <%= will_paginate @materiales_events %>
+  </div>
+  <div class="panel-footer">
+
   </div>
 </div>
