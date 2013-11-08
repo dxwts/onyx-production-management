@@ -2,7 +2,7 @@ class Materiale
   include Mongoid::Document
   include Mongoid::Timestamps
 
-  field :name, type: String
+  field :item, type: Integer
   field :onyx_p_n, type: String
   field :type, type: String
   field :description, type: String

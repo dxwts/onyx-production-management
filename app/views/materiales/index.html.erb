@@ -8,7 +8,7 @@
 <table class="table table-condensed">
   <thead>
     <tr>
-      <th>Name</th>
+      <th>Item</th>
       <th>Onyx P/N</th>
       <th>Type</th>
       <th>Description</th>
@@ -38,7 +38,7 @@
       <tr>
     <%end%>
         <td hidden><%= materiale._id %></td>
-        <td><%= materiale.name %></td>
+        <td><%= materiale.item %></td>
         <td><%= materiale.onyx_p_n %></td>
         <td><%= materiale.type %></td>
         <td><%= materiale.description %></td>
@@ -68,9 +68,6 @@
 </table>
 
 <br>
-<div class="panel-aligin-center">
-    <%= will_paginate @materiales %>
-</div>
 
 <%= render "update_materiale" %>
 

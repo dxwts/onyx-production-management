@@ -6,8 +6,9 @@ class MaterialesController < ApplicationController
   # GET /materiales
   # GET /materiales.json
   def index
-    create_test_data
-    @materiales = Materiale.paginate(:page => params[:page])
+    # create_test_data
+    # @materiales = Materiale.paginate(:page => params[:page])
+    @materiales = Materiale.all
     @events = Event.all
   end
 
@@ -38,7 +39,7 @@ class MaterialesController < ApplicationController
   def create
     @materiale = Materiale.new(materiale_params)
     @event = MaterialesEvent.new
-    @event.obj = @materiale.name
+    @event.obj = @materiale.onyx_p_n
     @event.quantity = @materiale.quantity
     @event.event = "create"
     respond_to do |format|
@@ -57,7 +58,7 @@ class MaterialesController < ApplicationController
   # PATCH/PUT /materiales/1.json
   def update
     @event = MaterialesEvent.new
-    @event.obj = @materiale.name
+    @event.obj = @materiale.onyx_p_n
     @event.quantity = materiale_params[:quantity]
     @event.event = "rset"
     respond_to do |format|
@@ -93,7 +94,7 @@ class MaterialesController < ApplicationController
     #   end
     # end
     @event = MaterialesEvent.new
-    @event.obj = @materiale.name
+    @event.obj = @materiale.onyx_p_n
     @event.quantity = params[:quantity]
     @event.event =  params[:event]
     @event.remark = params[:remark]
@@ -109,9 +110,11 @@ class MaterialesController < ApplicationController
   def create_test_data
     @materiales = Materiale.all
     if @materiales.size < 100
+      i = 0;
       100.times {
+        puts i
         @materiale = Materiale.new
-        @materiale.name = 1
+        @materiale.item = i+1
         @materiale.save
       }
     end
@@ -125,6 +128,6 @@ class MaterialesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def materiale_params
-      params.require(:materiale).permit(:name, :onyx_p_n, :type, :description, :p_n, :substitute_code, :substitute_p_n, :footprint, :mark, :level, :remark, :manufacture, :quantity, :lower_limit, :role)
+      params.require(:materiale).permit(:item, :onyx_p_n, :type, :description, :p_n, :substitute_code, :substitute_p_n, :footprint, :mark, :level, :remark, :manufacture, :quantity, :lower_limit, :role)
     end
   end
