@@ -41,7 +41,7 @@ class MaterialesController < ApplicationController
     @event = MaterialesEvent.new
     @event.obj = @materiale.onyx_p_n
     @event.quantity = @materiale.quantity
-    @event.event = "create"
+    @event.event = "创建"
     respond_to do |format|
       if @materiale.save
         @materiale.materiales_event << @event
@@ -58,12 +58,14 @@ class MaterialesController < ApplicationController
   # PATCH/PUT /materiales/1.json
   def update
     @event = MaterialesEvent.new
-    @event.obj = @materiale.onyx_p_n
-    @event.quantity = materiale_params[:quantity]
-    @event.event = "rset"
+     if @materiale.quantity != materiale_params[:quantity].to_i
+      @event.obj = @materiale.onyx_p_n
+      @event.quantity = materiale_params[:quantity]
+      @event.event = "重置"
+      @materiale.materiales_event << @event
+    end
     respond_to do |format|
       if @materiale.update(materiale_params)
-        @materiale.materiales_event << @event
         format.html { redirect_to @materiale, notice: 'Materiale was successfully updated.' }
         format.json { head :no_content }
       else

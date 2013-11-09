@@ -5,7 +5,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel">Add Materiales</h4>
+        <h4 class="modal-title" id="myModalLabel">添加物料</h4>
     </div>
     <div class="modal-body">
         <h3 id="materiale_name"></h3>
@@ -13,26 +13,26 @@
             <input type="hidden" id="materiale_id"/><br>
             <input type="hidden" id="materiale_ctrl"/><br>
             <div class="form-group">
-                <label>Event:</label>
+                <label>操作:</label>
                 <select class="form-control" id="materiale_event">
                 <% @events.each do |event| %>
-                  <option value="'<%= event.name%>'"><%= event.name%></option>
+                  <option value="<%= event.name%>"><%= event.name%></option>
                 <%end%>
               </select>
           </div>
           <div class="form-grop">
-            <label>Quantity:</label>
+            <label>数量:</label>
             <input type="number" class="form-control" id="materiale_quantity"/><br>
         </div>
         <div class="form-grop">
-            <label>Remark:</label>
+            <label>备注:</label>
             <input type="text" class="form-control" id="materiale_remark"/><br>
         </div>
     </form>
 </div>
 <div class="modal-footer">
-    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-    <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="update_materiale()">Save changes</button>
+    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+    <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="update_materiale()">保存</button>
 </div>
 
 </div>

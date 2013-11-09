@@ -2,15 +2,15 @@ function set_data (el, ctrl) {
     var objectId;
     var name;
     objectId = $(el.children()[0]).html();
-    name = $(el.children()[1]).html();
-    $("#materiale_name").text(name);
+    onyx_p_n = $(el.children()[2]).html();
+    $("#materiale_name").text(onyx_p_n);
     $("#materiale_id").val(objectId);
     $("#materiale_ctrl").val(ctrl);
     console.log($("#materiale_ctrl").val());
     if (ctrl === "plus") {
-        $("#myModalLabel").text("Add Materiales");
+        $("#myModalLabel").text("添加物料");
     } else {
-        $("#myModalLabel").text("Minus Materiales");
+        $("#myModalLabel").text("减少物料");
     }
 }
 

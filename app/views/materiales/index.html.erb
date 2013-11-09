@@ -1,7 +1,7 @@
-<h1>Listing materiales</h1>
+<h1>物料列表</h1>
 
 <div class="tools-bar">
-<%= button_to "New Materiale", new_materiale_path,
+<%= button_to "添加新物料", new_materiale_path,
       :class => "btn btn-success", :method => :get %>
 </div>
 
@@ -9,20 +9,19 @@
   <thead>
     <tr>
       <th>Item</th>
-      <th>Onyx P/N</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>P/N</th>
-      <th>Substitute code</th>
-      <th>Substitute P/N</th>
-      <th>Footprint</th>
-      <th>Mark</th>
-      <th>Level</th>
-      <th>Remark</th>
-      <th>Manufacture</th>
-      <th>Quantity</th>
-      <th>Lower limit</th>
-      <th>Role</th>
+      <th>文石编码</th>
+      <th>类型</th>
+      <th>描述</th>
+      <th>料号</th>
+      <th>替代料号</th>
+      <th>替代料编码</th>
+      <th>封装</th>
+      <th>丝印</th>
+      <th>物料级别</th>
+      <th>备注</th>
+      <th>供应商</th>
+      <th>数量</th>
+      <th>安全库存</th>
       <th></th>
       <th></th>
       <th></th>
@@ -52,15 +51,14 @@
         <td><%= materiale.manufacture %></td>
         <td><%= materiale.quantity %></td>
         <td><%= materiale.lower_limit %></td>
-        <td><%= materiale.role %></td>
         <td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#update_materiale" onclick="set_data($(this).parent().parent(), 'plus')">
               <span class="glyphicon glyphicon-plus"></span></button></td>
         <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#update_materiale" onclick="set_data($(this).parent().parent(), 'minus')">
               <span class="glyphicon glyphicon-minus"></span></button></td>
-        <td><%= button_to "Show", materiale, :class => "btn btn-info", :method => :get %></td>
+        <td><%= button_to "详细", materiale, :class => "btn btn-info", :method => :get %></td>
         <!-- <td><%= link_to 'Edit', edit_materiale_path(materiale) %></td> -->
         <!-- <td><button type="button" class="btn btn-danger"><%= link_to 'Destroy', materiale, method: :delete, data: { confirm: 'Are you sure?' } %> -->
-        <td><%= button_to "Destroy", materiale, :class => "btn btn-danger", :method => :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= button_to "删除", materiale, :class => "btn btn-danger", :method => :delete, data: { confirm: '确定删除改物料?' } %></td>
      
       </tr>
     <% end %>
