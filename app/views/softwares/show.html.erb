@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Os:</strong>
+  <%= @software.os %>
+</p>
+
+<p>
+  <strong>Boot anim:</strong>
+  <%= @software.boot_anim %>
+</p>
+
+<p>
+  <strong>Standby anim:</strong>
+  <%= @software.standby_anim %>
+</p>
+
+<p>
+  <strong>Poweroff anim:</strong>
+  <%= @software.poweroff_anim %>
+</p>
+
+<p>
+  <strong>Language:</strong>
+  <%= @software.language %>
+</p>
+
+<p>
+  <strong>Softwoare features:</strong>
+  <%= @software.software_features %>
+</p>
+
+<p>
+  <strong>Remark:</strong>
+  <%= @software.remark %>
+</p>
+
+<%= link_to 'Edit', edit_software_path(@software) %> |
+<%= link_to 'Back', softwares_path %>

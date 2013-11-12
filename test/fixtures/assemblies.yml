@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  shell_color: MyString
+  spray: MyString
+  key: MyString
+  stand: MyString
+  mark: MyString
+  numbering_sequence: MyString
+  remark: MyString
+
+two:
+  shell_color: MyString
+  spray: MyString
+  key: MyString
+  stand: MyString
+  mark: MyString
+  numbering_sequence: MyString
+  remark: MyString

@@ -1,0 +1,39 @@
+<h1>Listing assemblies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Shell color</th>
+      <th>Spray</th>
+      <th>Key</th>
+      <th>Stand</th>
+      <th>Mark</th>
+      <th>Numbering sequence</th>
+      <th>Remark</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @assemblies.each do |assembly| %>
+      <tr>
+        <td><%= assembly.shell_color %></td>
+        <td><%= assembly.spray %></td>
+        <td><%= assembly.key %></td>
+        <td><%= assembly.stand %></td>
+        <td><%= assembly.mark %></td>
+        <td><%= assembly.numbering_sequence %></td>
+        <td><%= assembly.remark %></td>
+        <td><%= link_to 'Show', assembly %></td>
+        <td><%= link_to 'Edit', edit_assembly_path(assembly) %></td>
+        <td><%= link_to 'Destroy', assembly, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Assembly', new_assembly_path %>

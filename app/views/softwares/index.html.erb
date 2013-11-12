@@ -1,0 +1,39 @@
+<h1>Listing softwares</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Os</th>
+      <th>Boot anim</th>
+      <th>Standby anim</th>
+      <th>Poweroff anim</th>
+      <th>Language</th>
+      <th>Softwoare features</th>
+      <th>Remark</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @softwares.each do |software| %>
+      <tr>
+        <td><%= software.os %></td>
+        <td><%= software.boot_anim %></td>
+        <td><%= software.standby_anim %></td>
+        <td><%= software.poweroff_anim %></td>
+        <td><%= software.language %></td>
+        <td><%= software.software_features %></td>
+        <td><%= software.remark %></td>
+        <td><%= link_to 'Show', software %></td>
+        <td><%= link_to 'Edit', edit_software_path(software) %></td>
+        <td><%= link_to 'Destroy', software, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Software', new_software_path %>

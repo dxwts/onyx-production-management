@@ -1,0 +1,2 @@
+module RegisterOrdersHelper
+end

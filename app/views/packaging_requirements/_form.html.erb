@@ -1,0 +1,45 @@
+<%= form_for(@packaging_requirement) do |f| %>
+  <% if @packaging_requirement.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@packaging_requirement.errors.count, "error") %> prohibited this packaging_requirement from being saved:</h2>
+
+      <ul>
+      <% @packaging_requirement.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :box_capacity %><br>
+    <%= f.text_field :box_capacity %>
+  </div>
+  <div class="field">
+    <%= f.label :binding %><br>
+    <%= f.text_field :binding %>
+  </div>
+  <div class="field">
+    <%= f.label :auxiliary_board %><br>
+    <%= f.text_field :auxiliary_board %>
+  </div>
+  <div class="field">
+    <%= f.label :tape %><br>
+    <%= f.text_field :tape %>
+  </div>
+  <div class="field">
+    <%= f.label :box_sticker %><br>
+    <%= f.text_field :box_sticker %>
+  </div>
+  <div class="field">
+    <%= f.label :mark_box %><br>
+    <%= f.text_field :mark_box %>
+  </div>
+  <div class="field">
+    <%= f.label :remark %><br>
+    <%= f.text_field :remark %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

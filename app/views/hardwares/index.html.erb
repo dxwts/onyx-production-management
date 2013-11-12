@@ -1,0 +1,43 @@
+<h1>Listing hardwares</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Cpu</th>
+      <th>Ram</th>
+      <th>Flash</th>
+      <th>Screen</th>
+      <th>Wireless</th>
+      <th>Touch type</th>
+      <th>Battery capacity</th>
+      <th>Connector</th>
+      <th>Remark</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @hardwares.each do |hardware| %>
+      <tr>
+        <td><%= hardware.cpu %></td>
+        <td><%= hardware.ram %></td>
+        <td><%= hardware.flash %></td>
+        <td><%= hardware.screen %></td>
+        <td><%= hardware.wireless %></td>
+        <td><%= hardware.touch_type %></td>
+        <td><%= hardware.battery_capacity %></td>
+        <td><%= hardware.connector %></td>
+        <td><%= hardware.remark %></td>
+        <td><%= link_to 'Show', hardware %></td>
+        <td><%= link_to 'Edit', edit_hardware_path(hardware) %></td>
+        <td><%= link_to 'Destroy', hardware, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Hardware', new_hardware_path %>

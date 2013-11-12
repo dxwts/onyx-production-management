@@ -1,0 +1,43 @@
+<h1>Listing fittings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Box</th>
+      <th>Inside box</th>
+      <th>Dust proof bag</th>
+      <th>Warranty card</th>
+      <th>Quick help</th>
+      <th>Help</th>
+      <th>Serial number</th>
+      <th>Ean13 code</th>
+      <th>Remark</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fittings.each do |fitting| %>
+      <tr>
+        <td><%= fitting.box %></td>
+        <td><%= fitting.inside_box %></td>
+        <td><%= fitting.dust_proof_bag %></td>
+        <td><%= fitting.warranty_card %></td>
+        <td><%= fitting.quick_help %></td>
+        <td><%= fitting.help %></td>
+        <td><%= fitting.serial_number %></td>
+        <td><%= fitting.ean13_code %></td>
+        <td><%= fitting.remark %></td>
+        <td><%= link_to 'Show', fitting %></td>
+        <td><%= link_to 'Edit', edit_fitting_path(fitting) %></td>
+        <td><%= link_to 'Destroy', fitting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fitting', new_fitting_path %>

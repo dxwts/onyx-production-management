@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cpu:</strong>
+  <%= @hardware.cpu %>
+</p>
+
+<p>
+  <strong>Ram:</strong>
+  <%= @hardware.ram %>
+</p>
+
+<p>
+  <strong>Flash:</strong>
+  <%= @hardware.flash %>
+</p>
+
+<p>
+  <strong>Screen:</strong>
+  <%= @hardware.screen %>
+</p>
+
+<p>
+  <strong>Wireless:</strong>
+  <%= @hardware.wireless %>
+</p>
+
+<p>
+  <strong>Touch type:</strong>
+  <%= @hardware.touch_type %>
+</p>
+
+<p>
+  <strong>Battery capacity:</strong>
+  <%= @hardware.battery_capacity %>
+</p>
+
+<p>
+  <strong>Connector:</strong>
+  <%= @hardware.connector %>
+</p>
+
+<p>
+  <strong>Remark:</strong>
+  <%= @hardware.remark %>
+</p>
+
+<%= link_to 'Edit', edit_hardware_path(@hardware) %> |
+<%= link_to 'Back', hardwares_path %>

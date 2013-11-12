@@ -1,0 +1,45 @@
+<%= form_for(@software) do |f| %>
+  <% if @software.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@software.errors.count, "error") %> prohibited this software from being saved:</h2>
+
+      <ul>
+      <% @software.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :os %><br>
+    <%= f.text_field :os %>
+  </div>
+  <div class="field">
+    <%= f.label :boot_anim %><br>
+    <%= f.text_field :boot_anim %>
+  </div>
+  <div class="field">
+    <%= f.label :standby_anim %><br>
+    <%= f.text_field :standby_anim %>
+  </div>
+  <div class="field">
+    <%= f.label :poweroff_anim %><br>
+    <%= f.text_field :poweroff_anim %>
+  </div>
+  <div class="field">
+    <%= f.label :language %><br>
+    <%= f.text_field :language %>
+  </div>
+  <div class="field">
+    <%= f.label :software_features %><br>
+    <%= f.text_field :software_features %>
+  </div>
+  <div class="field">
+    <%= f.label :remark %><br>
+    <%= f.text_field :remark %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

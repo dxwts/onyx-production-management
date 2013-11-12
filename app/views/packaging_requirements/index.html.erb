@@ -1,0 +1,39 @@
+<h1>Listing packaging_requirements</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Box capacity</th>
+      <th>Binding</th>
+      <th>Auxiliary board</th>
+      <th>Tape</th>
+      <th>Box sticker</th>
+      <th>Mark box</th>
+      <th>Remark</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @packaging_requirements.each do |packaging_requirement| %>
+      <tr>
+        <td><%= packaging_requirement.box_capacity %></td>
+        <td><%= packaging_requirement.binding %></td>
+        <td><%= packaging_requirement.auxiliary_board %></td>
+        <td><%= packaging_requirement.tape %></td>
+        <td><%= packaging_requirement.box_sticker %></td>
+        <td><%= packaging_requirement.mark_box %></td>
+        <td><%= packaging_requirement.remark %></td>
+        <td><%= link_to 'Show', packaging_requirement %></td>
+        <td><%= link_to 'Edit', edit_packaging_requirement_path(packaging_requirement) %></td>
+        <td><%= link_to 'Destroy', packaging_requirement, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Packaging requirement', new_packaging_requirement_path %>

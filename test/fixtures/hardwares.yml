@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  cpu: MyString
+  ram: MyString
+  flash: MyString
+  screen: MyString
+  wireless: MyString
+  touch_type: MyString
+  battery_capacity: MyString
+  connector: MyString
+  remark: MyString
+
+two:
+  cpu: MyString
+  ram: MyString
+  flash: MyString
+  screen: MyString
+  wireless: MyString
+  touch_type: MyString
+  battery_capacity: MyString
+  connector: MyString
+  remark: MyString

@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Box:</strong>
+  <%= @fitting.box %>
+</p>
+
+<p>
+  <strong>Inside box:</strong>
+  <%= @fitting.inside_box %>
+</p>
+
+<p>
+  <strong>Dust proof bag:</strong>
+  <%= @fitting.dust_proof_bag %>
+</p>
+
+<p>
+  <strong>Warranty card:</strong>
+  <%= @fitting.warranty_card %>
+</p>
+
+<p>
+  <strong>Quick help:</strong>
+  <%= @fitting.quick_help %>
+</p>
+
+<p>
+  <strong>Help:</strong>
+  <%= @fitting.help %>
+</p>
+
+<p>
+  <strong>Serial number:</strong>
+  <%= @fitting.serial_number %>
+</p>
+
+<p>
+  <strong>Ean13 code:</strong>
+  <%= @fitting.ean13_code %>
+</p>
+
+<p>
+  <strong>Remark:</strong>
+  <%= @fitting.remark %>
+</p>
+
+<%= link_to 'Edit', edit_fitting_path(@fitting) %> |
+<%= link_to 'Back', fittings_path %>

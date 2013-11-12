@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Shell color:</strong>
+  <%= @assembly.shell_color %>
+</p>
+
+<p>
+  <strong>Spray:</strong>
+  <%= @assembly.spray %>
+</p>
+
+<p>
+  <strong>Key:</strong>
+  <%= @assembly.key %>
+</p>
+
+<p>
+  <strong>Stand:</strong>
+  <%= @assembly.stand %>
+</p>
+
+<p>
+  <strong>Mark:</strong>
+  <%= @assembly.mark %>
+</p>
+
+<p>
+  <strong>Numbering sequence:</strong>
+  <%= @assembly.numbering_sequence %>
+</p>
+
+<p>
+  <strong>Remark:</strong>
+  <%= @assembly.remark %>
+</p>
+
+<%= link_to 'Edit', edit_assembly_path(@assembly) %> |
+<%= link_to 'Back', assemblies_path %>

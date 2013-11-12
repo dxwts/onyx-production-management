@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Register orders:</strong>
+  <%= @register_order.register_orders_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @register_order.user %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @register_order.time %>
+</p>
+
+<p>
+  <strong>Version:</strong>
+  <%= @register_order.version %>
+</p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @register_order.product %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @register_order.color %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @register_order.quantity %>
+</p>
+
+<p>
+  <strong>Delivery time:</strong>
+  <%= @register_order.delivery_time %>
+</p>
+
+<p>
+  <strong>Customer:</strong>
+  <%= @register_order.customer %>
+</p>
+
+<p>
+  <strong>Remark:</strong>
+  <%= @register_order.remark %>
+</p>
+
+<%= render "show_hardware"%>
+<%= render "show_software"%>
+<%= render "show_assembly"%>
+<%= render "show_fitting"%>
+<%= render "show_packaging_requirement"%>
+
+<%= link_to 'Edit', edit_register_order_path(@register_order) %> |
+<%= link_to 'Back', register_orders_path %>

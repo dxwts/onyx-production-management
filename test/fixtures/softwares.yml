@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  os: MyString
+  boot_anim: MyString
+  standby_anim: MyString
+  poweroff_anim: MyString
+  language: MyString
+  software_features: MyString
+  remark: MyString
+
+two:
+  os: MyString
+  boot_anim: MyString
+  standby_anim: MyString
+  poweroff_anim: MyString
+  language: MyString
+  software_features: MyString
+  remark: MyString

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  box_capacity: MyString
+  binding: MyString
+  auxiliary_board: MyString
+  tape: MyString
+  box_sticker: MyString
+  mark_box: MyString
+  remark: MyString
+
+two:
+  box_capacity: MyString
+  binding: MyString
+  auxiliary_board: MyString
+  tape: MyString
+  box_sticker: MyString
+  mark_box: MyString
+  remark: MyString

@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  register_orders_id: MyString
+  user: MyString
+  time: MyString
+  version: MyString
+  product: MyString
+  color: MyString
+  quantity: MyString
+  delivery_time: MyString
+  customer: MyString
+  remark: MyString
+
+two:
+  register_orders_id: MyString
+  user: MyString
+  time: MyString
+  version: MyString
+  product: MyString
+  color: MyString
+  quantity: MyString
+  delivery_time: MyString
+  customer: MyString
+  remark: MyString

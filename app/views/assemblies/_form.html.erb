@@ -1,0 +1,45 @@
+<%= form_for(@assembly) do |f| %>
+  <% if @assembly.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@assembly.errors.count, "error") %> prohibited this assembly from being saved:</h2>
+
+      <ul>
+      <% @assembly.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :shell_color %><br>
+    <%= f.text_field :shell_color %>
+  </div>
+  <div class="field">
+    <%= f.label :spray %><br>
+    <%= f.text_field :spray %>
+  </div>
+  <div class="field">
+    <%= f.label :key %><br>
+    <%= f.text_field :key %>
+  </div>
+  <div class="field">
+    <%= f.label :stand %><br>
+    <%= f.text_field :stand %>
+  </div>
+  <div class="field">
+    <%= f.label :mark %><br>
+    <%= f.text_field :mark %>
+  </div>
+  <div class="field">
+    <%= f.label :numbering_sequence %><br>
+    <%= f.text_field :numbering_sequence %>
+  </div>
+  <div class="field">
+    <%= f.label :remark %><br>
+    <%= f.text_field :remark %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

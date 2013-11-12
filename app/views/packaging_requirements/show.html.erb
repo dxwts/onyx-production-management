@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Box capacity:</strong>
+  <%= @packaging_requirement.box_capacity %>
+</p>
+
+<p>
+  <strong>Binding:</strong>
+  <%= @packaging_requirement.binding %>
+</p>
+
+<p>
+  <strong>Auxiliary board:</strong>
+  <%= @packaging_requirement.auxiliary_board %>
+</p>
+
+<p>
+  <strong>Tape:</strong>
+  <%= @packaging_requirement.tape %>
+</p>
+
+<p>
+  <strong>Box sticker:</strong>
+  <%= @packaging_requirement.box_sticker %>
+</p>
+
+<p>
+  <strong>Mark box:</strong>
+  <%= @packaging_requirement.mark_box %>
+</p>
+
+<p>
+  <strong>Remark:</strong>
+  <%= @packaging_requirement.remark %>
+</p>
+
+<%= link_to 'Edit', edit_packaging_requirement_path(@packaging_requirement) %> |
+<%= link_to 'Back', packaging_requirements_path %>

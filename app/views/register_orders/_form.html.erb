@@ -1,0 +1,241 @@
+<%= form_for(@register_order) do |f| %>
+  <% if @register_order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@register_order.errors.count, "error") %> prohibited this register_order from being saved:</h2>
+
+      <ul>
+      <% @register_order.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :register_orders_id %><br>
+    <%= f.text_field :register_orders_id %>
+  </div>
+  <div class="field">
+    <%= f.label :user %><br>
+    <%= f.text_field :user %>
+  </div>
+  <div class="field">
+    <%= f.label :time %><br>
+    <%= f.text_field :time %>
+  </div>
+  <div class="field">
+    <%= f.label :version %><br>
+    <%= f.text_field :version %>
+  </div>
+  <div class="field">
+    <%= f.label :product %><br>
+    <%= f.text_field :product %>
+  </div>
+  <div class="field">
+    <%= f.label :color %><br>
+    <%= f.text_field :color %>
+  </div>
+  <div class="field">
+    <%= f.label :quantity %><br>
+    <%= f.text_field :quantity %>
+  </div>
+  <div class="field">
+    <%= f.label :delivery_time %><br>
+    <%= f.text_field :delivery_time %>
+  </div>
+  <div class="field">
+    <%= f.label :customer %><br>
+    <%= f.text_field :customer %>
+  </div>
+  <div class="field">
+    <%= f.label :remark %><br>
+    <%= f.text_field :remark %>
+  </div>
+  
+  
+  <h3>Hardware</h3>
+ 
+ 	<%= f.fields_for :hardware do |hardware_form|%>
+ 		<div class="field">
+ 			<%= hardware_form.label :cpu %><br />
+ 			<%= hardware_form.text_field :cpu %>
+ 		</div>
+ 		<div class="field">
+ 			<%= hardware_form.label :ram %><br />
+ 			<%= hardware_form.text_field :ram %>
+ 		</div>
+ 		<div class="field">
+ 			<%= hardware_form.label :flash %><br />
+ 			<%= hardware_form.text_field :flash %>
+ 		</div>
+ 		<div class="field">
+ 			<%= hardware_form.label :screen %><br />
+ 			<%= hardware_form.text_field :screen %>
+ 		</div>
+ 		<div class="field">
+ 			<%= hardware_form.label :wireless %><br />
+ 			<%= hardware_form.text_field :wireless %>
+ 		</div>
+ 		<div class="field">
+ 			<%= hardware_form.label :touch_type %><br />
+ 			<%= hardware_form.text_field :touch_type %>
+ 		</div>
+ 		<div class="field">
+ 			<%= hardware_form.label :battery_capacity %><br />
+ 			<%= hardware_form.text_field :battery_capacity %>
+ 		</div>
+ 		<div class="field">
+ 			<%= hardware_form.label :connector %><br />
+ 			<%= hardware_form.text_field :connector %>
+ 		</div>
+ 		<div class="field">
+ 			<%= hardware_form.label :remark %><br />
+ 			<%= hardware_form.text_field :remark %>
+ 		</div>		
+ 	<%end%>
+ 	
+ 	<h3>Software</h3>
+ 	
+ 	<%= f.fields_for :software do |software_form|%>
+ 		<div class="field">
+ 			<%= software_form.label :os %><br />
+ 			<%= software_form.text_field :os %>
+ 		</div>
+ 		<div class="field">
+ 			<%= software_form.label :boot_anim %><br />
+ 			<%= software_form.text_field :boot_anim %>
+ 		</div>
+ 		<div class="field">
+ 			<%= software_form.label :standby_anim %><br />
+ 			<%= software_form.text_field :standby_anim %>
+ 		</div>
+ 		<div class="field">
+ 			<%= software_form.label :poweroff_anim %><br />
+ 			<%= software_form.text_field :poweroff_anim %>
+ 		</div>
+ 		<div class="field">
+ 			<%= software_form.label :language %><br />
+ 			<%= software_form.text_field :language %>
+ 		</div>
+ 		<div class="field">
+ 			<%= software_form.label :software_features %><br />
+ 			<%= software_form.text_field :software_features %>
+ 		</div>
+ 		<div class="field">
+ 			<%= software_form.label :remark %><br />
+ 			<%= software_form.text_field :remark %>
+ 		</div>
+ 	<%end%>
+ 	
+ 	<h3>Assembly</h3>
+ 	
+ 	<%= f.fields_for :assembly do |assembly_form|%>
+ 		<div class="field">
+ 			<%= assembly_form.label :shell_color %><br />
+ 			<%= assembly_form.text_field :shell_color %>
+ 		</div>
+ 		<div class="field">
+ 			<%= assembly_form.label :spray %><br />
+ 			<%= assembly_form.text_field :spray %>
+ 		</div>
+ 		<div class="field">
+ 			<%= assembly_form.label :key %><br />
+ 			<%= assembly_form.text_field :key %>
+ 		</div>
+ 		<div class="field">
+ 			<%= assembly_form.label :stand %><br />
+ 			<%= assembly_form.text_field :stand %>
+ 		</div>
+ 		<div class="field">
+ 			<%= assembly_form.label :mark %><br />
+ 			<%= assembly_form.text_field :mark %>
+ 		</div>
+ 		<div class="field">
+ 			<%= assembly_form.label :numbering_sequence %><br />
+ 			<%= assembly_form.text_field :numbering_sequence %>
+ 		</div>
+ 		<div class="field">
+ 			<%= assembly_form.label :remark %><br />
+ 			<%= assembly_form.text_field :remark %>
+ 		</div>
+ 	<%end%>
+ 	
+ 	
+ 	<h3>Fitting</h3>
+ 	
+ 	<%= f.fields_for :fitting do |fitting_form|%>
+ 		<div class="field">
+ 			<%= fitting_form.label :box %><br />
+ 			<%= fitting_form.text_field :box %>
+ 		</div>
+ 		<div class="field">
+ 			<%= fitting_form.label :inside_box %><br />
+ 			<%= fitting_form.text_field :inside_box %>
+ 		</div>
+ 		<div class="field">
+ 			<%= fitting_form.label :dust_proof_bag %><br />
+ 			<%= fitting_form.text_field :dust_proof_bag %>
+ 		</div>
+ 		<div class="field">
+ 			<%= fitting_form.label :warranty_card %><br />
+ 			<%= fitting_form.text_field :warranty_card %>
+ 		</div>
+ 		<div class="field">
+ 			<%= fitting_form.label :quick_help %><br />
+ 			<%= fitting_form.text_field :quick_help %>
+ 		</div>
+ 		<div class="field">
+ 			<%= fitting_form.label :help %><br />
+ 			<%= fitting_form.text_field :help %>
+ 		</div>
+ 		<div class="field">
+ 			<%= fitting_form.label :serial_number %><br />
+ 			<%= fitting_form.text_field :serial_number %>
+ 		</div>
+ 		<div class="field">
+ 			<%= fitting_form.label :ean13_code %><br />
+ 			<%= fitting_form.text_field :ean13_code %>
+ 		</div>
+ 		<div class="field">
+ 			<%= fitting_form.label :remark %><br />
+ 			<%= fitting_form.text_field :remark %>
+ 		</div>
+ 	<%end%>
+ 	
+ 	
+ 	<h3>Packaging Requirement</h3>
+ 	<%= f.fields_for :packaging_requirement do |packaging_requirement_form|%>
+ 		<div class="field">
+ 			<%= packaging_requirement_form.label :box_capacity %><br />
+ 			<%= packaging_requirement_form.text_field :box_capacity %>
+ 		</div>
+ 		<div class="field">
+ 			<%= packaging_requirement_form.label :binding %><br />
+ 			<%= packaging_requirement_form.text_field :binding %>
+ 		</div>
+ 		<div class="field">
+ 			<%= packaging_requirement_form.label :auxiliary_board %><br />
+ 			<%= packaging_requirement_form.text_field :auxiliary_board %>
+ 		</div>
+ 		<div class="field">
+ 			<%= packaging_requirement_form.label :tape %><br />
+ 			<%= packaging_requirement_form.text_field :tape %>
+ 		</div>
+ 		<div class="field">
+ 			<%= packaging_requirement_form.label :box_sticker %><br />
+ 			<%= packaging_requirement_form.text_field :box_sticker %>
+ 		</div>
+ 		<div class="field">
+ 			<%= packaging_requirement_form.label :mark_box %><br />
+ 			<%= packaging_requirement_form.text_field :mark_box %>
+ 		</div>
+ 		<div class="field">
+ 			<%= packaging_requirement_form.label :remark %><br />
+ 			<%= packaging_requirement_form.text_field :remark %>
+ 		</div>
+ 	<%end%>
+ 
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,45 @@
+<h1>Listing register_orders</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Register orders</th>
+      <th>User</th>
+      <th>Time</th>
+      <th>Version</th>
+      <th>Product</th>
+      <th>Color</th>
+      <th>Quantity</th>
+      <th>Delivery time</th>
+      <th>Customer</th>
+      <th>Remark</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @register_orders.each do |register_order| %>
+      <tr>
+        <td><%= register_order.register_orders_id %></td>
+        <td><%= register_order.user %></td>
+        <td><%= register_order.time %></td>
+        <td><%= register_order.version %></td>
+        <td><%= register_order.product %></td>
+        <td><%= register_order.color %></td>
+        <td><%= register_order.quantity %></td>
+        <td><%= register_order.delivery_time %></td>
+        <td><%= register_order.customer %></td>
+        <td><%= register_order.remark %></td>
+        <td><%= link_to 'Show', register_order %></td>
+        <td><%= link_to 'Edit', edit_register_order_path(register_order) %></td>
+        <td><%= link_to 'Destroy', register_order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Register order', new_register_order_path %>

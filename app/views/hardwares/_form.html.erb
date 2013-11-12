@@ -1,0 +1,53 @@
+<%= form_for(@hardware) do |f| %>
+  <% if @hardware.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@hardware.errors.count, "error") %> prohibited this hardware from being saved:</h2>
+
+      <ul>
+      <% @hardware.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :cpu %><br>
+    <%= f.text_field :cpu %>
+  </div>
+  <div class="field">
+    <%= f.label :ram %><br>
+    <%= f.text_field :ram %>
+  </div>
+  <div class="field">
+    <%= f.label :flash %><br>
+    <%= f.text_field :flash %>
+  </div>
+  <div class="field">
+    <%= f.label :screen %><br>
+    <%= f.text_field :screen %>
+  </div>
+  <div class="field">
+    <%= f.label :wireless %><br>
+    <%= f.text_field :wireless %>
+  </div>
+  <div class="field">
+    <%= f.label :touch_type %><br>
+    <%= f.text_field :touch_type %>
+  </div>
+  <div class="field">
+    <%= f.label :battery_capacity %><br>
+    <%= f.text_field :battery_capacity %>
+  </div>
+  <div class="field">
+    <%= f.label :connector %><br>
+    <%= f.text_field :connector %>
+  </div>
+  <div class="field">
+    <%= f.label :remark %><br>
+    <%= f.text_field :remark %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
