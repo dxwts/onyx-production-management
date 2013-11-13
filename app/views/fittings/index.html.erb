@@ -3,14 +3,12 @@
 <table>
   <thead>
     <tr>
-      <th>Box</th>
-      <th>Inside box</th>
-      <th>Dust proof bag</th>
-      <th>Warranty card</th>
-      <th>Quick help</th>
-      <th>Help</th>
-      <th>Serial number</th>
-      <th>Ean13 code</th>
+      <th>Adapter</th>
+      <th>Adapter sticker</th>
+      <th>Data line</th>
+      <th>Headphone</th>
+      <th>Tf card</th>
+      <th>Holster</th>
       <th>Remark</th>
       <th></th>
       <th></th>
@@ -21,14 +19,12 @@
   <tbody>
     <% @fittings.each do |fitting| %>
       <tr>
-        <td><%= fitting.box %></td>
-        <td><%= fitting.inside_box %></td>
-        <td><%= fitting.dust_proof_bag %></td>
-        <td><%= fitting.warranty_card %></td>
-        <td><%= fitting.quick_help %></td>
-        <td><%= fitting.help %></td>
-        <td><%= fitting.serial_number %></td>
-        <td><%= fitting.ean13_code %></td>
+        <td><%= fitting.adapter %></td>
+        <td><%= fitting.adapter_sticker %></td>
+        <td><%= fitting.data_line %></td>
+        <td><%= fitting.headphone %></td>
+        <td><%= fitting.tf_card %></td>
+        <td><%= fitting.holster %></td>
         <td><%= fitting.remark %></td>
         <td><%= link_to 'Show', fitting %></td>
         <td><%= link_to 'Edit', edit_fitting_path(fitting) %></td>

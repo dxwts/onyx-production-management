@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Box:</strong>
+  <%= @packaging_material.box %>
+</p>
+
+<p>
+  <strong>Inside box:</strong>
+  <%= @packaging_material.inside_box %>
+</p>
+
+<p>
+  <strong>Dust proof bag:</strong>
+  <%= @packaging_material.dust_proof_bag %>
+</p>
+
+<p>
+  <strong>Warranty card:</strong>
+  <%= @packaging_material.warranty_card %>
+</p>
+
+<p>
+  <strong>Quick help:</strong>
+  <%= @packaging_material.quick_help %>
+</p>
+
+<p>
+  <strong>Help:</strong>
+  <%= @packaging_material.help %>
+</p>
+
+<p>
+  <strong>Serial number:</strong>
+  <%= @packaging_material.serial_number %>
+</p>
+
+<p>
+  <strong>Ean13 code:</strong>
+  <%= @packaging_material.ean13_code %>
+</p>
+
+<p>
+  <strong>Remark:</strong>
+  <%= @packaging_material.remark %>
+</p>
+
+<%= link_to 'Edit', edit_packaging_material_path(@packaging_material) %> |
+<%= link_to 'Back', packaging_materials_path %>

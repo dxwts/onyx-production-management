@@ -17,6 +17,7 @@ class RegisterOrder
   has_one :software, :dependent => :destroy
   has_one :assembly, :dependent => :destroy
   has_one :fitting, :dependent => :destroy
+  has_one :packaging_material, :dependent => :destroy
   has_one :packaging_requirement, :dependent => :destroy
-  accepts_nested_attributes_for :hardware, :software, :assembly, :fitting, :packaging_requirement
+  accepts_nested_attributes_for :hardware, :software, :assembly, :fitting, :packaging_requirement, :packaging_material
 end

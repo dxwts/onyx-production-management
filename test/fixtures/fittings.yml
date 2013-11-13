@@ -1,23 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  box: MyString
-  inside_box: MyString
-  dust_proof_bag: MyString
-  warranty_card: MyString
-  quick_help: MyString
-  help: MyString
-  serial_number: MyString
-  ean13_code: MyString
+  adapter: MyString
+  adapter_sticker: MyString
+  data_line: MyString
+  headphone: MyString
+  tf_card: MyString
+  holster: MyString
   remark: MyString
 
 two:
-  box: MyString
-  inside_box: MyString
-  dust_proof_bag: MyString
-  warranty_card: MyString
-  quick_help: MyString
-  help: MyString
-  serial_number: MyString
-  ean13_code: MyString
+  adapter: MyString
+  adapter_sticker: MyString
+  data_line: MyString
+  headphone: MyString
+  tf_card: MyString
+  holster: MyString
   remark: MyString

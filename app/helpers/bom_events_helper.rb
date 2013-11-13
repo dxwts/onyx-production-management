@@ -1,0 +1,2 @@
+module BomEventsHelper
+end

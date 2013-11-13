@@ -69,6 +69,6 @@ class FittingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def fitting_params
-      params.require(:fitting).permit(:box, :inside_box, :dust_proof_bag, :warranty_card, :quick_help, :help, :serial_number, :ean13_code, :remark)
+      params.require(:fitting).permit(:adapter, :adapter_sticker, :data_line, :headphone, :tf_card, :holster, :remark)
     end
 end

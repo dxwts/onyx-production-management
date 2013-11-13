@@ -1,60 +1,119 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Register orders:</strong>
-  <%= @register_order.register_orders_id %>
+<p id="notice">
+	<%= notice %>
 </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @register_order.user %>
-</p>
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h4>订单情况</h4>
+	</div>
+	<div class="panel-body">
+		<p>
+			<strong>Register orders:</strong>
+			<%= @register_order.register_orders_id %>
+		</p>
 
-<p>
-  <strong>Time:</strong>
-  <%= @register_order.time %>
-</p>
+		<p>
+			<strong>User:</strong>
+			<%= @register_order.user %>
+		</p>
 
-<p>
-  <strong>Version:</strong>
-  <%= @register_order.version %>
-</p>
+		<p>
+			<strong>Time:</strong>
+			<%= @register_order.time %>
+		</p>
 
-<p>
-  <strong>Product:</strong>
-  <%= @register_order.product %>
-</p>
+		<p>
+			<strong>Version:</strong>
+			<%= @register_order.version %>
+		</p>
 
-<p>
-  <strong>Color:</strong>
-  <%= @register_order.color %>
-</p>
+		<p>
+			<strong>Product:</strong>
+			<%= @register_order.product %>
+		</p>
 
-<p>
-  <strong>Quantity:</strong>
-  <%= @register_order.quantity %>
-</p>
+		<p>
+			<strong>Color:</strong>
+			<%= @register_order.color %>
+		</p>
 
-<p>
-  <strong>Delivery time:</strong>
-  <%= @register_order.delivery_time %>
-</p>
+		<p>
+			<strong>Quantity:</strong>
+			<%= @register_order.quantity %>
+		</p>
 
-<p>
-  <strong>Customer:</strong>
-  <%= @register_order.customer %>
-</p>
+		<p>
+			<strong>Delivery time:</strong>
+			<%= @register_order.delivery_time %>
+		</p>
 
-<p>
-  <strong>Remark:</strong>
-  <%= @register_order.remark %>
-</p>
+		<p>
+			<strong>Customer:</strong>
+			<%= @register_order.customer %>
+		</p>
 
-<%= render "show_hardware"%>
-<%= render "show_software"%>
-<%= render "show_assembly"%>
-<%= render "show_fitting"%>
-<%= render "show_packaging_requirement"%>
+		<p>
+			<strong>Remark:</strong>
+			<%= @register_order.remark %>
+		</p>
+	</div>
+</div>
+
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h4>硬件相关</h4>
+	</div>
+	<div class="panel-body">
+		<%= render "show_hardware"%>
+	</div>
+</div>
+
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h4>软件相关</h4>
+	</div>
+	<div class="panel-body">
+		<%= render "show_software"%>
+	</div>
+</div>
+
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h4>组装相关</h4>
+	</div>
+	<div class="panel-body">
+		<%= render "show_assembly"%>
+	</div>
+</div>
+
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h4>配件要求</h4>
+	</div>
+	<div class="panel-body">
+		<%= render "show_fitting"%>
+	</div>
+</div>
+
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h4>包材</h4>
+	</div>
+	<div class="panel-body">
+		<%= render "show_packaging_material"%>
+	</div>
+</div>
+
+
+
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h4>包装要求</h4>
+	</div>
+	<div class="panel-body">
+		<%= render "show_packaging_requirement"%>
+	</div>
+</div>
 
 <%= link_to 'Edit', edit_register_order_path(@register_order) %> |
 <%= link_to 'Back', register_orders_path %>

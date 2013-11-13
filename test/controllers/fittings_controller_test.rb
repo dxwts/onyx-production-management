@@ -18,7 +18,7 @@ class FittingsControllerTest < ActionController::TestCase
 
   test "should create fitting" do
     assert_difference('Fitting.count') do
-      post :create, fitting: { box: @fitting.box, dust_proof_bag: @fitting.dust_proof_bag, ean13_code: @fitting.ean13_code, help: @fitting.help, inside_box: @fitting.inside_box, quick_help: @fitting.quick_help, remark: @fitting.remark, serial_number: @fitting.serial_number, warranty_card: @fitting.warranty_card }
+      post :create, fitting: { adapter: @fitting.adapter, adapter_sticker: @fitting.adapter_sticker, data_line: @fitting.data_line, headphone: @fitting.headphone, holster: @fitting.holster, remark: @fitting.remark, tf_card: @fitting.tf_card }
     end
 
     assert_redirected_to fitting_path(assigns(:fitting))
@@ -35,7 +35,7 @@ class FittingsControllerTest < ActionController::TestCase
   end
 
   test "should update fitting" do
-    patch :update, id: @fitting, fitting: { box: @fitting.box, dust_proof_bag: @fitting.dust_proof_bag, ean13_code: @fitting.ean13_code, help: @fitting.help, inside_box: @fitting.inside_box, quick_help: @fitting.quick_help, remark: @fitting.remark, serial_number: @fitting.serial_number, warranty_card: @fitting.warranty_card }
+    patch :update, id: @fitting, fitting: { adapter: @fitting.adapter, adapter_sticker: @fitting.adapter_sticker, data_line: @fitting.data_line, headphone: @fitting.headphone, holster: @fitting.holster, remark: @fitting.remark, tf_card: @fitting.tf_card }
     assert_redirected_to fitting_path(assigns(:fitting))
   end
 

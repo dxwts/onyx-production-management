@@ -1,0 +1,27 @@
+<h1>Listing bom_events</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Event</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bom_events.each do |bom_event| %>
+      <tr>
+        <td><%= bom_event.event %></td>
+        <td><%= link_to 'Show', bom_event %></td>
+        <td><%= link_to 'Edit', edit_bom_event_path(bom_event) %></td>
+        <td><%= link_to 'Destroy', bom_event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bom event', new_bom_event_path %>

@@ -1,18 +1,21 @@
-<h1>Listing register_orders</h1>
+<h1>订单申请</h1>
 
-<table>
+<div class="tools-bar">
+<%= button_to "申请新订单", new_register_order_path,
+      :class => "btn btn-success", :method => :get %>
+</div>
+
+<table class="table table-condensed">
   <thead>
     <tr>
-      <th>Register orders</th>
-      <th>User</th>
-      <th>Time</th>
-      <th>Version</th>
-      <th>Product</th>
-      <th>Color</th>
-      <th>Quantity</th>
-      <th>Delivery time</th>
-      <th>Customer</th>
-      <th>Remark</th>
+      <th>申请人</th>
+      <th>时间</th>
+      <th>产品型号</th>
+      <th>颜色</th>
+      <th>数量</th>
+      <th>交期</th>
+      <th>客户</th>
+      <th>备注</th>
       <th></th>
       <th></th>
       <th></th>
@@ -22,24 +25,22 @@
   <tbody>
     <% @register_orders.each do |register_order| %>
       <tr>
-        <td><%= register_order.register_orders_id %></td>
+        <td hidden><%= register_order.register_orders_id %></td>
         <td><%= register_order.user %></td>
         <td><%= register_order.time %></td>
-        <td><%= register_order.version %></td>
         <td><%= register_order.product %></td>
         <td><%= register_order.color %></td>
         <td><%= register_order.quantity %></td>
         <td><%= register_order.delivery_time %></td>
         <td><%= register_order.customer %></td>
         <td><%= register_order.remark %></td>
-        <td><%= link_to 'Show', register_order %></td>
-        <td><%= link_to 'Edit', edit_register_order_path(register_order) %></td>
-        <td><%= link_to 'Destroy', register_order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= button_to "详细", register_order, :class => "btn btn-info", :method => :get %></td>
+        <td><%= button_to "编辑", edit_register_order_path(register_order), :class => "btn btn-primary", :method => :get%></td>
+        <td><%= button_to "删除", register_order, method: :delete, data: { confirm: '确定删除?' }, :class => "btn btn-danger"%></td>
+        <!-- <td><button class="btn btn-success">下单</button></td> -->
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Register order', new_register_order_path %>

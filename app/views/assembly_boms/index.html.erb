@@ -1,0 +1,43 @@
+<h1>Listing assembly_boms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Order</th>
+      <th>Business</th>
+      <th>Product</th>
+      <th>Kind</th>
+      <th>Onyx p n</th>
+      <th>P n</th>
+      <th>Name</th>
+      <th>Quantity</th>
+      <th>Remark</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @assembly_boms.each do |assembly_bom| %>
+      <tr>
+        <td><%= assembly_bom.order_id %></td>
+        <td><%= assembly_bom.business_id %></td>
+        <td><%= assembly_bom.product %></td>
+        <td><%= assembly_bom.kind %></td>
+        <td><%= assembly_bom.onyx_p_n %></td>
+        <td><%= assembly_bom.p_n %></td>
+        <td><%= assembly_bom.name %></td>
+        <td><%= assembly_bom.quantity %></td>
+        <td><%= assembly_bom.remark %></td>
+        <td><%= link_to 'Show', assembly_bom %></td>
+        <td><%= link_to 'Edit', edit_assembly_bom_path(assembly_bom) %></td>
+        <td><%= link_to 'Destroy', assembly_bom, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Assembly bom', new_assembly_bom_path %>

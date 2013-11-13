@@ -1,0 +1,53 @@
+<%= form_for(@packaging_material) do |f| %>
+  <% if @packaging_material.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@packaging_material.errors.count, "error") %> prohibited this packaging_material from being saved:</h2>
+
+      <ul>
+      <% @packaging_material.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :box %><br>
+    <%= f.text_field :box %>
+  </div>
+  <div class="field">
+    <%= f.label :inside_box %><br>
+    <%= f.text_field :inside_box %>
+  </div>
+  <div class="field">
+    <%= f.label :dust_proof_bag %><br>
+    <%= f.text_field :dust_proof_bag %>
+  </div>
+  <div class="field">
+    <%= f.label :warranty_card %><br>
+    <%= f.text_field :warranty_card %>
+  </div>
+  <div class="field">
+    <%= f.label :quick_help %><br>
+    <%= f.text_field :quick_help %>
+  </div>
+  <div class="field">
+    <%= f.label :help %><br>
+    <%= f.text_field :help %>
+  </div>
+  <div class="field">
+    <%= f.label :serial_number %><br>
+    <%= f.text_field :serial_number %>
+  </div>
+  <div class="field">
+    <%= f.label :ean13_code %><br>
+    <%= f.text_field :ean13_code %>
+  </div>
+  <div class="field">
+    <%= f.label :remark %><br>
+    <%= f.text_field :remark %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -20,6 +20,7 @@ class RegisterOrdersController < ApplicationController
     @register_order.build_assembly
     @register_order.build_fitting
     @register_order.build_packaging_requirement
+    @register_order.build_packaging_material
   end
 
   # GET /register_orders/1/edit
@@ -35,6 +36,7 @@ class RegisterOrdersController < ApplicationController
     @register_order.build_assembly(register_order_params['assembly_attributes'])
     @register_order.build_fitting(register_order_params['fitting_attributes'])
     @register_order.build_packaging_requirement(register_order_params['packaging_requirement_attributes'])
+    @register_order.build_packaging_material(register_order_params['packaging_material_attributes'])
     respond_to do |format|
       if @register_order.save
         format.html { redirect_to @register_order, notice: 'Register order was successfully created.' }
@@ -81,8 +83,9 @@ class RegisterOrdersController < ApplicationController
       params.require(:register_order).permit(:register_orders_id, :user, :time, :version, :product, :color, :quantity, :delivery_time, :customer, :remark, 
       :hardware_attributes => [:cpu, :ram, :flash, :screen, :wireless, :touch_type, :battery_capacity, :connector, :remark], 
       :software_attributes => [:os,:boot_anim, :standby_anim, :poweroff_anim, :language, :software_features, :remark],
-      :assembly_attributes => [:shell_color, :spray, :key, :stand, :mark, :numbering_sequence, :remark], 
-      :fitting_attributes => [:box, :inside_box, :dust_proof_bag, :warranty_card, :quick_help, :help, :serial_number, :ean13_code, :remark],
+      :assembly_attributes => [:shell_color, :spray, :key, :stand, :mark, :numbering_sequence, :remark],
+      :fitting_attributes =>  [:adapter, :adapter_sticker, :data_line, :headphone, :tf_card, :holster, :remark],
+      :packaging_material_attributes => [:box, :inside_box, :dust_proof_bag, :warranty_card, :quick_help, :help, :serial_number, :ean13_code, :remark],
       :packaging_requirement_attributes => [:box_capacity, :binding, :auxiliary_board, :tape, :box_sticker, :mark_box, :remark])
     end
 end

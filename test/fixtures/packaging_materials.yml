@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  box: MyString
+  inside_box: MyString
+  dust_proof_bag: MyString
+  warranty_card: MyString
+  quick_help: MyString
+  help: MyString
+  serial_number: MyString
+  ean13_code: MyString
+  remark: MyString
+
+two:
+  box: MyString
+  inside_box: MyString
+  dust_proof_bag: MyString
+  warranty_card: MyString
+  quick_help: MyString
+  help: MyString
+  serial_number: MyString
+  ean13_code: MyString
+  remark: MyString

@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Order:</strong>
+  <%= @assembly_bom.order_id %>
+</p>
+
+<p>
+  <strong>Business:</strong>
+  <%= @assembly_bom.business_id %>
+</p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @assembly_bom.product %>
+</p>
+
+<p>
+  <strong>Kind:</strong>
+  <%= @assembly_bom.kind %>
+</p>
+
+<p>
+  <strong>Onyx p n:</strong>
+  <%= @assembly_bom.onyx_p_n %>
+</p>
+
+<p>
+  <strong>P n:</strong>
+  <%= @assembly_bom.p_n %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @assembly_bom.name %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @assembly_bom.quantity %>
+</p>
+
+<p>
+  <strong>Remark:</strong>
+  <%= @assembly_bom.remark %>
+</p>
+
+<%= link_to 'Edit', edit_assembly_bom_path(@assembly_bom) %> |
+<%= link_to 'Back', assembly_boms_path %>

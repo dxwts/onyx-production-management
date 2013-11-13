@@ -1,0 +1,43 @@
+<h1>Listing packaging_materials</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Box</th>
+      <th>Inside box</th>
+      <th>Dust proof bag</th>
+      <th>Warranty card</th>
+      <th>Quick help</th>
+      <th>Help</th>
+      <th>Serial number</th>
+      <th>Ean13 code</th>
+      <th>Remark</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @packaging_materials.each do |packaging_material| %>
+      <tr>
+        <td><%= packaging_material.box %></td>
+        <td><%= packaging_material.inside_box %></td>
+        <td><%= packaging_material.dust_proof_bag %></td>
+        <td><%= packaging_material.warranty_card %></td>
+        <td><%= packaging_material.quick_help %></td>
+        <td><%= packaging_material.help %></td>
+        <td><%= packaging_material.serial_number %></td>
+        <td><%= packaging_material.ean13_code %></td>
+        <td><%= packaging_material.remark %></td>
+        <td><%= link_to 'Show', packaging_material %></td>
+        <td><%= link_to 'Edit', edit_packaging_material_path(packaging_material) %></td>
+        <td><%= link_to 'Destroy', packaging_material, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Packaging material', new_packaging_material_path %>

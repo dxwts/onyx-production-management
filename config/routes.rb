@@ -1,11 +1,23 @@
 OnyxProductionManagement::Application.routes.draw do
+  resources :fittings
+
+  resources :packaging_materials
+
+  resources :assembly_boms
+
+  resources :bom_events
+
+  resources :boms
+
+  resources :orders
+
+  resources :products
+
   resources :hardwares
 
   resources :softwares
 
   resources :assemblies
-
-  resources :fittings
 
   resources :packaging_requirements
 

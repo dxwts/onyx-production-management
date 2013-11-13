@@ -165,41 +165,75 @@
  	
  	<%= f.fields_for :fitting do |fitting_form|%>
  		<div class="field">
- 			<%= fitting_form.label :box %><br />
- 			<%= fitting_form.text_field :box %>
+ 			<%= fitting_form.label :adapter %><br />
+ 			<%= fitting_form.text_field :adapter %>
  		</div>
  		<div class="field">
- 			<%= fitting_form.label :inside_box %><br />
- 			<%= fitting_form.text_field :inside_box %>
+ 			<%= fitting_form.label :adapter_sticker %><br />
+ 			<%= fitting_form.text_field :adapter_sticker %>
  		</div>
  		<div class="field">
- 			<%= fitting_form.label :dust_proof_bag %><br />
- 			<%= fitting_form.text_field :dust_proof_bag %>
+ 			<%= fitting_form.label :data_line %><br />
+ 			<%= fitting_form.text_field :data_line %>
  		</div>
  		<div class="field">
- 			<%= fitting_form.label :warranty_card %><br />
- 			<%= fitting_form.text_field :warranty_card %>
+ 			<%= fitting_form.label :headphone %><br />
+ 			<%= fitting_form.text_field :headphone %>
  		</div>
  		<div class="field">
- 			<%= fitting_form.label :quick_help %><br />
- 			<%= fitting_form.text_field :quick_help %>
+ 			<%= fitting_form.label :tf_card %><br />
+ 			<%= fitting_form.text_field :tf_card %>
  		</div>
  		<div class="field">
- 			<%= fitting_form.label :help %><br />
- 			<%= fitting_form.text_field :help %>
- 		</div>
- 		<div class="field">
- 			<%= fitting_form.label :serial_number %><br />
- 			<%= fitting_form.text_field :serial_number %>
- 		</div>
- 		<div class="field">
- 			<%= fitting_form.label :ean13_code %><br />
- 			<%= fitting_form.text_field :ean13_code %>
+ 			<%= fitting_form.label :holster %><br />
+ 			<%= fitting_form.text_field :holster %>
  		</div>
  		<div class="field">
  			<%= fitting_form.label :remark %><br />
  			<%= fitting_form.text_field :remark %>
  		</div>
+ 		<%end%>
+ 	
+ 	<h3>Packageing Materials</h3>
+ 	
+ 	<%= f.fields_for :packaging_material do |packaging_material_form|%>
+ 		<div class="field">
+ 			<%= packaging_material_form.label :box %><br />
+ 			<%= packaging_material_form.text_field :box %>
+ 		</div>
+ 		<div class="field">
+ 			<%= packaging_material_form.label :inside_box %><br />
+ 			<%= packaging_material_form.text_field :inside_box %>
+ 		</div>
+ 		<div class="field">
+ 			<%= packaging_material_form.label :dust_proof_bag %><br />
+ 			<%= packaging_material_form.text_field :dust_proof_bag %>
+ 		</div>
+ 		<div class="field">
+ 			<%= packaging_material_form.label :warranty_card %><br />
+ 			<%= packaging_material_form.text_field :warranty_card %>
+ 		</div>
+ 		<div class="field">
+ 			<%= packaging_material_form.label :quick_help %><br />
+ 			<%= packaging_material_form.text_field :quick_help %>
+ 		</div>
+ 		<div class="field">
+ 			<%= packaging_material_form.label :help %><br />
+ 			<%= packaging_material_form.text_field :help %>
+ 		</div>
+ 		<div class="field">
+ 			<%= packaging_material_form.label :serial_number %><br />
+ 			<%= packaging_material_form.text_field :serial_number %>
+ 		</div>
+ 		<div class="field">
+ 			<%= packaging_material_form.label :ean13_code %><br />
+ 			<%= packaging_material_form.text_field :ean13_code %>
+ 		</div>
+ 		<div class="field">
+ 			<%= packaging_material_form.label :remark %><br />
+ 			<%= packaging_material_form.text_field :remark %>
+ 		</div>
+ 	
  	<%end%>
  	
  	
