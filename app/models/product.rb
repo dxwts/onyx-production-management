@@ -5,6 +5,7 @@ class Product
   
   field :name, type: String
   
-  has_one :bom 
-  has_one :assembly_bom
+  has_many :bom 
+  has_many :assembly_bom
+  has_many :order
 end

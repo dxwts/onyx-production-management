@@ -10,4 +10,6 @@ class Order
   field :delivery_time, type: String
   field :customer, type: String
   field :remark, type: String
+  
+  belongs_to :product
 end

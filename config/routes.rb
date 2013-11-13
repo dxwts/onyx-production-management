@@ -11,7 +11,13 @@ OnyxProductionManagement::Application.routes.draw do
 
   resources :orders
 
-  resources :products
+  resources :products do
+    member do
+      get "boms"
+      get "orders"
+      get "assembly_boms"
+    end
+  end
 
   resources :hardwares
 

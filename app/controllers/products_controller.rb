@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_action :set_product, only: [:show, :edit, :update, :destroy, :boms, :orders, :assembly_boms]
 
   # GET /products
   # GET /products.json
@@ -59,6 +59,18 @@ class ProductsController < ApplicationController
       format.html { redirect_to products_url }
       format.json { head :no_content }
     end
+  end
+  
+  def boms
+    render "show_boms"
+  end
+  
+  def orders
+    render "show_orders"
+  end
+  
+  def assembly_boms
+    render "show_assembly_boms"
   end
 
   private
