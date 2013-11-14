@@ -38,6 +38,7 @@ class MaterialesController < ApplicationController
   # POST /materiales.json
   def create
     @materiale = Materiale.new(materiale_params)
+    @materiale.estimated_quantity = @materiale.quantity 
     @event = MaterialesEvent.new
     @event.obj = @materiale.onyx_p_n
     @event.quantity = @materiale.quantity
@@ -101,7 +102,8 @@ class MaterialesController < ApplicationController
     @event.event =  params[:event]
     @event.remark = params[:remark]
     # if @materiale.update_attribute(:quantity, @quantity)
-    @materiale.materiales_event << @event
+    @materiale.materiales_event << @event    
+    @materiale.update(:estimated_quantity => @materiale.estimated_quantity + @event.quantity)
     respond_to do |format|
       format.html { redirect_to :back }
       format.json { head :no_content }

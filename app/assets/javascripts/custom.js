@@ -2,7 +2,7 @@ function set_data (el, ctrl) {
     var objectId;
     var name;
     objectId = $(el.children()[0]).html();
-    onyx_p_n = $(el.children()[2]).html();
+    onyx_p_n = $(el.children()[1]).html();
     $("#materiale_name").text(onyx_p_n);
     $("#materiale_id").val(objectId);
     $("#materiale_ctrl").val(ctrl);
@@ -30,5 +30,5 @@ function update_materiale () {
     }
     var params = {"id" : materiale_id, "event" : materiale_event, "quantity" : materiale_quantity, "remark" : materiale_remark};
     console.log(params);
-     $.get('/materiales/update_materiale', params);
+     $.get('/materiales/update_materiale.json', params);
 }

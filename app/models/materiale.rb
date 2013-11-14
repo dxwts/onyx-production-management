@@ -15,8 +15,10 @@ class Materiale
   field :remark, type: String
   field :manufacture, type: String
   field :quantity, type: Integer, default: 0
+  field :estimated_quantity, type: Integer, default: 0
   field :lower_limit, type: Integer, default: 0
   field :role, type: String
+  field :document, type: String
 
-  has_many :materiales_event
+  has_many :materiales_event, :dependent => :destroy
 end
