@@ -36,7 +36,11 @@ OnyxProductionManagement::Application.routes.draw do
   resources :materiales_events
 
   get   'materiales/update_materiale', to: 'materiales#update_materiale'
-  resources :materiales
+  resources :materiales do    
+    collection do
+      post "search", to: 'materiales#search_materiales'
+    end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

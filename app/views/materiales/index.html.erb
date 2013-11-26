@@ -1,9 +1,25 @@
 <h1>物料列表</h1>
 
 <p id="notice"><%= notice %></p>
+	
+
 <div class="tools-bar">
-<%= button_to "添加新物料", new_materiale_path,
-      :class => "btn btn-success", :method => :get %>
+	<div class="row">
+	    <%= form_tag(search_materiales_path) do%>
+            <div class="col-xs-1">
+                <%= select_tag( 'search_category', options_for_select({'文石编码' => 'onyx_p_n', '类型' => 'type'}), {:class => 'form-control'}) %>
+            </div>
+            
+            <div class="input-group col-xs-3">
+                <%= text_field_tag :search_params, params[:search_params], :class => 'form-control' %>
+                <span class="input-group-btn">
+                    <%= submit_tag "搜索", :class => "btn btn-default", :id => "search_button" %>
+                </span>
+            </div>
+	    <%end%>
+		<%= button_to "添加新物料", new_materiale_path,
+				:class => "btn btn-success", :method => :get %>
+	</div>
 </div>
 
 <table class="table table-condensed">
@@ -38,7 +54,7 @@
       <tr>
     <%end%>
         <td hidden><%= materiale._id %></td>
-        <td><%= materiale.onyx_p_n %></td>
+        <td class="test11"><%= materiale.onyx_p_n %></td>
         <td><%= materiale.type %></td>
         <td><%= materiale.description %></td>
         <td><%= materiale.p_n %></td>
@@ -69,7 +85,5 @@
 <br>
 
 <%= render "update_materiale" %>
-
-
 
 

@@ -19,6 +19,9 @@ class Materiale
   field :lower_limit, type: Integer, default: 0
   field :role, type: String
   field :document, type: String
-
+  
+  validates :quantity, :estimated_quantity, numericality: { only_integer: true }
+  validates :onyx_p_n, :type, :p_n, :footprint, :mark, :level, :manufacture, presence: true
+  
   has_many :materiales_event, :dependent => :destroy
 end

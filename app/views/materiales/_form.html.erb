@@ -12,16 +12,12 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.label :item %>
-    <%= f.text_field :item, :class =>  "form-control"%>
-  </div>
-  <div class="form-group">
     <%= f.label :文石编码 %>
     <%= f.text_field :onyx_p_n, :class =>  "form-control" %>
   </div>
   <div class="form-group">
     <%= f.label :类型 %>
-    <%= collection_select(:materiale, :type, @types, :name, :name, {prompt: true}, {:class =>  "form-control"})%>
+    <%= collection_select(:materiale, :type, Type.all, :name, :name, {prompt: true}, {:class =>  "form-control"})%>
   </div>
   <div class="form-group">
     <%= f.label :描述 %>
@@ -67,10 +63,10 @@
     <%= f.label :安全库存 %>
     <%= f.number_field :lower_limit, :class =>  "form-control" %>
   </div>
-  <div class="form-group">
+  <!-- <div class="form-group">
     <%= f.label :权限 %>
     <%= f.text_field :role, :class =>  "form-control" %>
-  </div>
+  </div> -->
   <div class="actions ">
     <%= f.submit "保存",  :class => "btn btn-primary" %>
   </div>
