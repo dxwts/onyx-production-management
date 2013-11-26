@@ -13,7 +13,7 @@ class MaterialesController < ApplicationController
   # GET /materiales/1
   # GET /materiales/1.json
   def show
-    @materiales_events = MaterialesEvent.where(:materiale_id => @materiale._id).paginate(:page => params[:page])
+    @materiales_events = @materiale.materiales_event.paginate(:page => params[:page])
   end
 
   # GET /materiales/new

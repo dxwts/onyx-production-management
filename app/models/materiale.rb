@@ -22,7 +22,7 @@ class Materiale
   validates :quantity, numericality: { only_integer: true }
   validates :onyx_p_n, :type, :p_n, :footprint, :mark, :level, :manufacture, presence: true
   
-  has_many :materiales_event, :dependent => :destroy
+  has_many :materiales_event, :dependent => :destroy, order: 'created_at DESC'
   
   
    def estimated_quantity
