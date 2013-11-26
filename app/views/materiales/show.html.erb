@@ -6,11 +6,6 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Item:</strong>
-  <%= @materiale.item %>
-</p>
-
-<p>
   <strong>文石编码:</strong>
   <%= @materiale.onyx_p_n %>
 </p>
@@ -80,8 +75,8 @@
   <%= @materiale.role %>
 </p>
 
-<%= link_to '编辑', edit_materiale_path(@materiale) %> |
-<%= link_to '返回', materiales_path %>
+<%= link_to '编辑', edit_materiale_path(@materiale), {:class => "btn btn-default"}%> |
+<%= link_to '返回', materiales_path, {:class => "btn btn-default"} %>
 
   </div>
   <div class="panel-footer"></div>

@@ -1,5 +1,5 @@
 class MaterialesController < ApplicationController
-  before_action :set_materiale, only: [:show, :edit, :update, :destroy, :update_materiale]
+  before_action :set_materiale, only: [:show, :edit, :update, :destroy]
   WillPaginate.per_page = 15
 
 
@@ -14,11 +14,6 @@ class MaterialesController < ApplicationController
   # GET /materiales/1.json
   def show
     @materiales_events = MaterialesEvent.where(:materiale_id => @materiale._id).paginate(:page => params[:page])
-    @total = 0
-    @events = MaterialesEvent.where(:materiale_id => @materiale._id)
-    @events.each do |event|
-      @total = @total + event.quantity
-    end
   end
 
   # GET /materiales/new
@@ -34,7 +29,6 @@ class MaterialesController < ApplicationController
   # POST /materiales.json
   def create
     @materiale = Materiale.new(materiale_params)
-    @materiale.estimated_quantity = @materiale.quantity 
     @event = MaterialesEvent.new
     @event.obj = @materiale.onyx_p_n
     @event.quantity = @materiale.quantity
@@ -84,24 +78,26 @@ class MaterialesController < ApplicationController
 
 
   def update_materiale
-    # if params[:ctrl] === "plus"
-    #   @quantity = @materiale.quantity + params[:quantity].to_i
-    # elsif params[:ctrl] === "minus"
-    #   @quantity = @materiale.quantity - params[:quantity].to_i
-    #   if @quantity < 0
-    #     @quantity = 0
-    #   end
-    # end
+    @materiale = Materiale.find(params[:materiale_id])
+    @update_quantity = 0
+    if params[:materiale_ctrl] === "plus"
+      @update_quantity =  params[:quantity].to_i
+    elsif params[:materiale_ctrl] === "minus"
+      @update_quantity = -params[:quantity].to_i
+    end
+    @quantity = @materiale.quantity + @update_quantity 
+    if @quantity < 0
+        @quantity = 0
+    end
     @event = MaterialesEvent.new
     @event.obj = @materiale.onyx_p_n
-    @event.quantity = params[:quantity]
+    @event.quantity = @update_quantity
     @event.event =  params[:event]
     @event.remark = params[:remark]
     # if @materiale.update_attribute(:quantity, @quantity)
     @materiale.materiales_event << @event    
-    @materiale.update(:estimated_quantity => @materiale.estimated_quantity + @event.quantity)
     respond_to do |format|
-      format.html { redirect_to :back }
+      format.html { redirect_to materiales_url }
       format.json { head :no_content }
       # end
     end

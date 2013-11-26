@@ -7,7 +7,7 @@
 	<div class="row">
 	    <%= form_tag(search_materiales_path) do%>
             <div class="col-xs-1">
-                <%= select_tag( 'search_category', options_for_select({'文石编码' => 'onyx_p_n', '类型' => 'type'}), {:class => 'form-control'}) %>
+                <%= select_tag( 'search_category', options_for_select({'文石编码' => 'onyx_p_n', '类型' => 'type', '料号' => 'p_n', '供应商' => 'manufacture'}), {:class => 'form-control'}) %>
             </div>
             
             <div class="input-group col-xs-3">
@@ -48,36 +48,7 @@
 
   <tbody>
     <% @materiales.each do |materiale| %>
-    <% if materiale.quantity <= materiale.lower_limit%>
-      <tr class="danger">
-      <%else%>
-      <tr>
-    <%end%>
-        <td hidden><%= materiale._id %></td>
-        <td class="test11"><%= materiale.onyx_p_n %></td>
-        <td><%= materiale.type %></td>
-        <td><%= materiale.description %></td>
-        <td><%= materiale.p_n %></td>
-        <td><%= materiale.substitute_code %></td>
-        <td><%= materiale.substitute_p_n %></td>
-        <td><%= materiale.footprint %></td>
-        <td><%= materiale.mark %></td>
-        <td><%= materiale.level %></td>
-        <td><%= materiale.remark %></td>
-        <td><%= materiale.manufacture %></td>
-        <td><%= materiale.quantity %></td>
-        <td><%= materiale.estimated_quantity%></td>
-        <td><%= materiale.lower_limit %></td>
-        <td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#update_materiale" onclick="set_data($(this).parent().parent(), 'plus')">
-              <span class="glyphicon glyphicon-plus"></span></button></td>
-        <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#update_materiale" onclick="set_data($(this).parent().parent(), 'minus')">
-              <span class="glyphicon glyphicon-minus"></span></button></td>
-        <td><%= button_to "详细", materiale, :class => "btn btn-info", :method => :get %></td>
-        <!-- <td><%= link_to 'Edit', edit_materiale_path(materiale) %></td> -->
-        <!-- <td><button type="button" class="btn btn-danger"><%= link_to 'Destroy', materiale, method: :delete, data: { confirm: 'Are you sure?' } %> -->
-        <td><%= button_to "删除", materiale, :class => "btn btn-danger", :method => :delete, data: { confirm: '确定删除改物料?' } %></td>
-     
-      </tr>
+        <%= render materiale %>    
     <% end %>
   </tbody>
 </table>

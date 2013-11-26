@@ -1,41 +1,45 @@
-
-
 <div id="update_materiale" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel">添加物料</h4>
-    </div>
-    <div class="modal-body">
-        <h3 id="materiale_name"></h3>
-        <form role="form">
-            <input type="hidden" id="materiale_id"/><br>
-            <input type="hidden" id="materiale_ctrl"/><br>
-            <div class="form-group">
-                <label>操作:</label>
-                <select class="form-control" id="materiale_event">
-                <% Event.all.each do |event| %>
-                  <option value="<%= event.name%>"><%= event.name%></option>
-                <%end%>
-              </select>
-          </div>
-          <div class="form-grop">
-            <label>数量:</label>
-            <input type="number" class="form-control" id="materiale_quantity"/><br>
-        </div>
-        <div class="form-grop">
-            <label>备注:</label>
-            <textarea rows="3" cols="50" class="form-control" id="materiale_remark"></textarea>
-            <br>
-        </div>
-    </form>
-</div>
-<div class="modal-footer">
-    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-    <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="update_materiale()">保存</button>
-</div>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel">添加物料</h4>
+            </div>
+            <div class="modal-body">
+                <h3 id="materiale_name"></h3>
+                
+                <%= form_tag(update_materiale_materiales_path) do %>
+                    <%= hidden_field_tag  'materiale_id'%>
+                    <%= hidden_field_tag  "materiale_ctrl"%>
+                    
+                    <div class="form-group">
+                        <%= label_tag :event, '操作：'%>
+                        <% event_array = Event.all.map { |event| [event.name, event.name] } %>
+                        <%= select_tag('event', options_for_select(event_array), include_blank: true, :class => "form-control")%>
+                    </div>
+                    
+                    <div class="form-grop">
+                        <%= label_tag :quantity, '数量：'%>
+                        <%= text_field_tag :quantity , params[:quantity], :type => "number", :class => "form-control", :id => "materiale_quantity"%>
+                    </div>
+                    
+                    <div class="form-grop">
+                        <%= label_tag :remark, '备注：'%>
+                        <%= text_area_tag :remark, nil,  :class =>  "form-control", :size => '50x3'%>
+                        <br>
+                    </div>
+                     <div class="actions">
+                        <%= submit_tag "保存",  :class => "btn btn-primary" %>
+                        <%= link_to "取消",{}, {:data => {:dismiss => "modal"}, :class => "btn btn-default"}%>
+                    </div>
+                <% end %>
+                
+            </div>
+            <div class="modal-footer">
+            </div>
 
-</div>
-</div>
+        </div>
+    </div>
 </div>

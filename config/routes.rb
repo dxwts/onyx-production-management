@@ -35,10 +35,10 @@ OnyxProductionManagement::Application.routes.draw do
 
   resources :materiales_events
 
-  get   'materiales/update_materiale', to: 'materiales#update_materiale'
   resources :materiales do    
     collection do
       post "search", to: 'materiales#search_materiales'
+      post "update_materiale"
     end
   end
 
