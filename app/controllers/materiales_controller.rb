@@ -31,6 +31,7 @@ class MaterialesController < ApplicationController
   def create
     @materiale = Materiale.new(materiale_params)
     @event = MaterialesEvent.new
+    @event.user = current_user.name
     @event.obj = @materiale.onyx_p_n
     @event.quantity = @materiale.quantity
     @event.event = "创建"
@@ -54,6 +55,7 @@ class MaterialesController < ApplicationController
       @event.obj = @materiale.onyx_p_n
       @event.quantity = materiale_params[:quantity]
       @event.event = "重置"
+      @event.user = current_user.name
       @materiale.materiales_event << @event
     end
     respond_to do |format|
@@ -95,6 +97,7 @@ class MaterialesController < ApplicationController
     @event.quantity = @update_quantity
     @event.event =  params[:event]
     @event.remark = params[:remark]
+    @event.user = current_user.name
     # if @materiale.update_attribute(:quantity, @quantity)
     @materiale.materiales_event << @event    
     respond_to do |format|

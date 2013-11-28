@@ -1,91 +1,95 @@
-<div class="row">
-  <div class="col-lg-4">
-<div class="panel panel-primary">
-  <div class="panel-heading"><h4>物料</h4></div>
-  <div class="panel-body">
-<p id="notice"><%= notice %></p>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-5">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h4>物料</h4>
+                </div>
+                <div class="panel-body">
+                    <p id="notice">
+                        <%= notice %>
+                    </p>
 
-<p>
-  <strong>文石编码:</strong>
-  <%= @materiale.onyx_p_n %>
-</p>
+                    <p>
+                        <strong>文石编码:</strong>
+                        <%= @materiale.onyx_p_n %>
+                    </p>
 
-<p>
-  <strong>类型:</strong>
-  <%= @materiale.type %>
-</p>
+                    <p>
+                        <strong>类型:</strong>
+                        <%= @materiale.type %>
+                    </p>
 
-<p>
-  <strong>描述:</strong>
-  <%= @materiale.description %>
-</p>
+                    <p>
+                        <strong>描述:</strong>
+                        <%= @materiale.description %>
+                    </p>
 
-<p>
-  <strong>料号:</strong>
-  <%= @materiale.p_n %>
-</p>
+                    <p>
+                        <strong>料号:</strong>
+                        <%= @materiale.p_n %>
+                    </p>
 
-<p>
-  <strong>替代料号:</strong>
-  <%= @materiale.substitute_code %>
-</p>
+                    <p>
+                        <strong>替代料号:</strong>
+                        <%= @materiale.substitute_code %>
+                    </p>
 
-<p>
-  <strong>替代料编码:</strong>
-  <%= @materiale.substitute_p_n %>
-</p>
+                    <p>
+                        <strong>替代料编码:</strong>
+                        <%= @materiale.substitute_p_n %>
+                    </p>
 
-<p>
-  <strong>封装:</strong>
-  <%= @materiale.footprint %>
-</p>
+                    <p>
+                        <strong>封装:</strong>
+                        <%= @materiale.footprint %>
+                    </p>
 
-<p>
-  <strong>丝印:</strong>
-  <%= @materiale.mark %>
-</p>
+                    <p>
+                        <strong>丝印:</strong>
+                        <%= @materiale.mark %>
+                    </p>
 
-<p>
-  <strong>物料级别:</strong>
-  <%= @materiale.level %>
-</p>
+                    <p>
+                        <strong>物料级别:</strong>
+                        <%= @materiale.level %>
+                    </p>
 
-<p>
-  <strong>备注:</strong>
-  <%= @materiale.remark %>
-</p>
+                    <p>
+                        <strong>备注:</strong>
+                        <%= @materiale.remark %>
+                    </p>
 
-<p>
-  <strong>供应商:</strong>
-  <%= @materiale.manufacture %>
-</p>
+                    <p>
+                        <strong>供应商:</strong>
+                        <%= @materiale.manufacture %>
+                    </p>
 
-<p>
-  <strong>数量:</strong>
-  <%= @materiale.quantity %>
-</p>
+                    <p>
+                        <strong>数量:</strong>
+                        <%= @materiale.quantity %>
+                    </p>
 
-<p>
-  <strong>安全库存:</strong>
-  <%= @materiale.lower_limit %>
-</p>
+                    <p>
+                        <strong>安全库存:</strong>
+                        <%= @materiale.lower_limit %>
+                    </p>
 
-<p>
-  <strong>权限:</strong>
-  <%= @materiale.role %>
-</p>
+                    <p>
+                        <strong>权限:</strong>
+                        <%= @materiale.role %>
+                    </p>
 
-<%= link_to '编辑', edit_materiale_path(@materiale), {:class => "btn btn-default"}%> |
-<%= link_to '返回', materiales_path, {:class => "btn btn-default"} %>
+                    <%= link_to '编辑', edit_materiale_path(@materiale), {:class => "btn btn-default"}%> |
+                    <%= link_to '返回', materiales_path, {:class => "btn btn-default"} %>
 
-  </div>
-  <div class="panel-footer"></div>
-</div>
-</div>
+                </div>
+                <div class="panel-footer"></div>
+            </div>
+        </div>
 
-
-
-<div id="events_panel" class="col-lg-6">
-  <%= render "events_list"%>
-</div>
+        <div id="events_panel" class="col-lg-7">
+            <%= render "events_list"%>
+        </div>
+    </div>
 </div>
