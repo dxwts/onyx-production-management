@@ -33,10 +33,15 @@ group :doc do
 end
 
 gem 'mongoid', git: 'https://github.com/mongoid/mongoid.git'
+
 gem "bson_ext"
 # gem 'will_paginate', git: 'git@github.com:mislav/will_paginate.git'
 gem "will_paginate_mongoid"
+
 gem 'bootstrap-will_paginate'
+
+gem 'devise'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

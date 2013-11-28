@@ -1,4 +1,5 @@
 class MaterialesController < ApplicationController
+  before_filter :authenticate_user!
   before_action :set_materiale, only: [:show, :edit, :update, :destroy]
   WillPaginate.per_page = 15
 

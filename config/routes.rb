@@ -1,4 +1,12 @@
 OnyxProductionManagement::Application.routes.draw do
+  devise_for :users
+  
+  devise_scope :user do
+    delete "/users/sign_out" => "devise/sessions#destroy"
+    get    "/users/sign_in" => "devise/sessions#new"
+    get    "/users/sign_up" => "devise/registrations#new"
+  end
+  
   resources :fittings
 
   resources :packaging_materials

@@ -1,5 +1,5 @@
 body {
-  padding-top: 50px;
+  padding-top: 10px;
 }
 .template {
   padding: 40px 15px;
@@ -15,10 +15,6 @@ body {
     padding: 15px 40px;
 }
 
-.test {
-    color: red;
-}
-
 .new_form {
     margin-left:auto;
     margin-right:auto;
@@ -28,3 +24,67 @@ body {
 .panel-aligin-center {
     text-align: center;
 }
+
+
+
+.form-sign {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-sign .form-sign-heading,
+.form-sign .checkbox {
+  margin-bottom: 10px;
+}
+.form-sign .checkbox {
+  font-weight: normal;
+}
+.form-sign .form-control {
+  position: relative;
+  font-size: 16px;
+  height: auto;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.form-sign .form-control:focus {
+  z-index: 2;
+}
+.form-sign input[type="text"] {
+  margin-bottom: -1px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.form-sign input[type="password"] {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.form-sign .submit-button {
+    margin-top: 10px;
+}
+
+.checkbox-div {
+    margin-top: 10px;
+}
+
+.form-edit {
+  max-width: 600px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+
+#cancel_panel {
+    max-width: 600px;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+#notice_panel {
+    padding: 15px;
+    margin: 0 auto;
+    text-align: center;
+}
+
