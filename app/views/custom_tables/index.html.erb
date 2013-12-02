@@ -1,0 +1,25 @@
+<h1>Listing custom_tables</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @custom_tables.each do |custom_table| %>
+      <tr>
+        <td><%= link_to 'Show', custom_table %></td>
+        <td><%= link_to 'Edit', edit_custom_table_path(custom_table) %></td>
+        <td><%= link_to 'Destroy', custom_table, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Custom table', new_custom_table_path %>

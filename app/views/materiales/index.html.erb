@@ -14,28 +14,30 @@
                 </span>
             </div>
 	    <%end%>
-		<%= button_to "添加新物料", new_materiale_path,
-				:class => "btn btn-success", :method => :get %>
+	    
+	    <%= link_to "编辑列表", edit_column_custom_tables_path(:table_name => 'Materiale'), :class => "btn btn-default", :method => :get%>
+		<%= link_to "添加新物料", new_materiale_path, :class => "btn btn-success", :method => :get %>
 	</div>
 </div>
 
 <table class="table table-condensed">
+    <% columns = column_is_select("Materiale") %>
   <thead>
     <tr>
-      <th>文石编码</th>
-      <th>类型</th>
-      <th>描述</th>
-      <th>料号</th>
-      <th>替代料号</th>
-      <th>替代料编码</th>
-      <th>封装</th>
-      <th>丝印</th>
-      <th>物料级别</th>
-      <th>备注</th>
-      <th>供应商</th>
-      <th>数量</th>
-      <th>预估数量</th>
-      <th>安全库存</th>
+      <th <%= is_need_hidden(columns.include?("onyx_p_n"))%>>文石编码</th>
+      <th <%= is_need_hidden(columns.include?("type"))%>>类型</th>
+      <th <%= is_need_hidden(columns.include?("description"))%>>描述</th>
+      <th <%= is_need_hidden(columns.include?("p_n"))%>>料号</th>
+      <th <%= is_need_hidden(columns.include?("substitute_code"))%>>替代料号</th>
+      <th <%= is_need_hidden(columns.include?("substitute_p_n"))%>>替代料编码</th>
+      <th <%= is_need_hidden(columns.include?("footprint"))%>>封装</th>
+      <th <%= is_need_hidden(columns.include?("mark"))%>>丝印</th>
+      <th <%= is_need_hidden(columns.include?("level"))%>>物料级别</th>
+      <th <%= is_need_hidden(columns.include?("remark"))%>>备注</th>
+      <th <%= is_need_hidden(columns.include?("manufacture"))%>>供应商</th>
+      <th <%= is_need_hidden(columns.include?("quantity"))%>>数量</th>
+      <th <%= is_need_hidden(columns.include?("estimated_quantity"))%>>预估数量</th>
+      <th <%= is_need_hidden(columns.include?("lower_limit"))%>>安全库存</th>
       <th></th>
       <th></th>
       <th></th>

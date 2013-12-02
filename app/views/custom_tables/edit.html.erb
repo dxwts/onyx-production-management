@@ -1,0 +1,10 @@
+
+<%= form_tag(edit_custom_table_path, :html => {:class => ""}) do %>
+    <h2 class="form-sign-heading">设置隐藏列</h2>
+    <%= Materiale::TABLE_MAP.each do |k, v| %>
+    <p><%= k %><%= v %></p>
+    <% end %>
+        
+    <div class="submit-button"><%= submit_tag "保存", :class => "btn btn-lg btn-primary btn-block" %></div>
+<% end %>
+

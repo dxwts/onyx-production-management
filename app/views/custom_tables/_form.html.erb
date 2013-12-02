@@ -1,0 +1,17 @@
+<%= form_for(@custom_table) do |f| %>
+  <% if @custom_table.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@custom_table.errors.count, "error") %> prohibited this custom_table from being saved:</h2>
+
+      <ul>
+      <% @custom_table.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

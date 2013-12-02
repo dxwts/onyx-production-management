@@ -54,5 +54,6 @@ function search() {
 		// location.reload();
 		console.log(data);
 	});
+	
 
 }

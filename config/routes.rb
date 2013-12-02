@@ -1,4 +1,11 @@
 OnyxProductionManagement::Application.routes.draw do
+  resources :custom_tables do
+    collection do
+      get "edit_column"
+      post "update_column"
+    end
+  end
+
   devise_for :users
   
   devise_scope :user do

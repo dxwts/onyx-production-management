@@ -3,21 +3,22 @@
 <%else%>
     <tr>
 <%end%>
+        <% columns = column_is_select('Materiale') %>
         <td hidden><%= materiale._id %></td>
-        <td><%= materiale.onyx_p_n %></td>
-        <td><%= materiale.type %></td>
-        <td><%= materiale.description %></td>
-        <td><%= materiale.p_n %></td>
-        <td><%= materiale.substitute_code %></td>
-        <td><%= materiale.substitute_p_n %></td>
-        <td><%= materiale.footprint %></td>
-        <td><%= materiale.mark %></td>
-        <td><%= materiale.level %></td>
-        <td><%= materiale.remark %></td>
-        <td><%= materiale.manufacture %></td>
-        <td><%= materiale.quantity %></td>
-        <td><%= materiale.estimated_quantity %></td>
-        <td><%= materiale.lower_limit %></td>
+        <td <%= is_need_hidden(columns.include?("onyx_p_n"))%>><%= materiale.onyx_p_n %></td>
+        <td <%= is_need_hidden(columns.include?("type"))%>><%= materiale.type %></td>
+        <td <%= is_need_hidden(columns.include?("description"))%>><%= materiale.description %></td>
+        <td <%= is_need_hidden(columns.include?("p_n"))%>><%= materiale.p_n %></td>
+        <td <%= is_need_hidden(columns.include?("substitute_code"))%>><%= materiale.substitute_code %></td>
+        <td <%= is_need_hidden(columns.include?("substitute_p_n"))%>><%= materiale.substitute_p_n %></td>
+        <td <%= is_need_hidden(columns.include?("footprint"))%>><%= materiale.footprint %></td>
+        <td <%= is_need_hidden(columns.include?("mark"))%>><%= materiale.mark %></td>
+        <td <%= is_need_hidden(columns.include?("level"))%>><%= materiale.level %></td>
+        <td <%= is_need_hidden(columns.include?("remark"))%>><%= materiale.remark %></td>
+        <td <%= is_need_hidden(columns.include?("manufacture"))%>><%= materiale.manufacture %></td>
+        <td <%= is_need_hidden(columns.include?("quantity"))%>><%= materiale.quantity %></td>
+        <td <%= is_need_hidden(columns.include?("estimated_quantity"))%>><%= materiale.estimated_quantity %></td>
+        <td <%= is_need_hidden(columns.include?("lower_limit"))%>><%= materiale.lower_limit %></td>
         <td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#update_materiale" onclick="set_data($(this).parent().parent(), 'plus')">
               <span class="glyphicon glyphicon-plus"></span></button></td>
         <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#update_materiale" onclick="set_data($(this).parent().parent(), 'minus')">

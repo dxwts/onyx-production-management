@@ -1,0 +1,25 @@
+<div id="edit_table_columns" class="form-edit">
+    <h2 class="form-sign-heading">设置隐藏列</h2>
+    <% columns = column_is_select(@table) %>
+    <% @columns.each do |k, v| %>
+        <% if columns.include?(k.to_s)%>
+            <div class="checkbox">
+                <%= check_box_tag k, k, true %>
+                <%= label_tag v %>
+            </div>
+        <% else %>
+            <div class="checkbox">
+                <%= check_box_tag k, k %>
+                <%= label_tag v %>
+            </div>
+        <% end %>
+    <% end %>
+    <%= form_tag(update_column_custom_tables_path, :html => {:class => ""}) do %>
+
+        <%= hidden_field_tag 'table_name', @table%>
+        <%= hidden_field_tag  'table_columns'%>
+        <div class="submit-button">
+            <%= submit_tag "保存", :class => "btn btn-lg btn-primary btn-block" %>
+        </div>
+    <% end %>
+</div>
