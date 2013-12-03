@@ -110,7 +110,7 @@ class MaterialesController < ApplicationController
   def search_materiales
     column = params[:search_category]
     keyword = params[:search_params]
-    @materiales = Materiale.where(column => /#{keyword}/).all
+    @materiales = Materiale.where(column => /#{keyword}/i).all
     respond_to do |format|
       format.html { render "index" }
       format.json { render json: [@materiales, @events] }
