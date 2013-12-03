@@ -44,6 +44,8 @@ gem 'devise'
 
 gem "rails-i18n"
 
+gem "nokogiri", "~> 1.6.0"
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
