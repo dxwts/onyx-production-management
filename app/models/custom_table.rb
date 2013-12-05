@@ -4,7 +4,7 @@ class CustomTable
   field :name, :type => String
   field :column, :type => String, default: ""
   
-  validates :name, :column, presence: true
+  validates :name, presence: true
   validates_uniqueness_of :name
   
   belongs_to :user
