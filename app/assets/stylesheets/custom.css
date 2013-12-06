@@ -87,4 +87,12 @@ body {
     text-align: center;
 }
 
+#datasheet .fields input, #datasheet .fields a {
+    display: inline;
+}
+
+#acknowledgement .fields input, #datasheet .fields a {
+    display: inline;
+}
+
 

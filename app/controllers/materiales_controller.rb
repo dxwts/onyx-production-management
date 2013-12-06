@@ -127,6 +127,7 @@ class MaterialesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def materiale_params
       params.require(:materiale).permit(:item, :onyx_p_n, :type, :description, :p_n, :substitute_code, :substitute_p_n, :footprint, :mark,
-       :level, :remark, :manufacture, :quantity, :lower_limit, :role, :search_category, :search_params)
+       :level, :remark, :manufacture, :quantity, :lower_limit, :role, :search_category, :search_params, :datasheets_attributes => [:id, :datasheet, :_destroy], 
+       :acknowledgements_attributes => [:id, :acknowledgement, :_destroy])
     end
   end
