@@ -21,6 +21,7 @@
           <th>操作</th>
           <th>数量</th>
           <th>备注</th>
+          <th>时间</th>
           <th></th>
         </tr>
       </thead>
@@ -33,6 +34,7 @@
           <td><%= materiales_event.event %></td>
           <td><%= materiales_event.quantity %></td>
           <td><%= materiales_event.remark %></td>
+          <td><%= materiales_event.created_at %></td>
           <!-- <td><%= button_to "Show", materiales_event, :class => "btn btn-info", :method => :get %></td> -->
           <td><%= button_to "删除", materiales_event, :class => "btn btn-danger", :method => :delete, data: { confirm: '确定删除?' } %></td>
         </tr>

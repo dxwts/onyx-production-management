@@ -89,7 +89,7 @@
                     <p>
                         <strong>承认书：</strong><br />
                         <% @materiale.acknowledgements.each do |acknowledgement| %>
-                            <%= link_to acknowledgement.acknowledgement_filename, acknowledgement.acknowledgement_url%>
+                            <%= link_to acknowledgement.acknowledgement_filename, acknowledgement.acknowledgement_url%><br />
                         <% end %>
                     </p>
                     <%= link_to '编辑', edit_materiale_path(@materiale), {:class => "btn btn-default"}%> |
