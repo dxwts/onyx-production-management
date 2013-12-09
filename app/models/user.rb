@@ -40,4 +40,6 @@ class User
   field :locked_at,       :type => Time
   
   has_many :custom_table, :dependent => :destroy
+  
+  validates :email, :presence => true, :email => true
 end
