@@ -24,6 +24,7 @@ class Materiale
   has_many :materiales_event, :dependent => :destroy, order: 'created_at DESC'
   has_many :datasheets, :dependent => :destroy
   has_many :acknowledgements, :dependent => :destroy
+  has_many :materiale_manufacture_ship, :dependent => :destroy
   accepts_nested_attributes_for :datasheets, :acknowledgements, :allow_destroy => true
   
   

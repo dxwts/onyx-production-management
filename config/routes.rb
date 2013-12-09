@@ -1,4 +1,6 @@
 OnyxProductionManagement::Application.routes.draw do
+  resources :manufactures
+
   resources :custom_tables do
     collection do
       get "edit_column"

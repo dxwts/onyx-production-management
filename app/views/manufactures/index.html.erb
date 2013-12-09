@@ -1,0 +1,33 @@
+<h1>Listing manufactures</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Tel</th>
+      <th>Remark</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @manufactures.each do |manufacture| %>
+      <tr>
+        <td><%= manufacture.name %></td>
+        <td><%= manufacture.address %></td>
+        <td><%= manufacture.tel %></td>
+        <td><%= manufacture.remark %></td>
+        <td><%= link_to 'Show', manufacture %></td>
+        <td><%= link_to 'Edit', edit_manufacture_path(manufacture) %></td>
+        <td><%= link_to 'Destroy', manufacture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Manufacture', new_manufacture_path %>
