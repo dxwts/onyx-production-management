@@ -1,0 +1,18 @@
+<h1>导入数据</h1>
+
+<%= form_tag("/import_data/upload", multipart: true) do %>
+<div class="form-group">
+    <%= label_tag :选择数据文件%>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-danger">文件必须为CSV格式</span>
+    <%= file_field_tag :data_file %>
+</div>
+<div class="form-group">
+    <div class="checkbox-div"><%= check_box_tag :rest_database %> <%= label_tag :reset_database, "重置数据库" %></div>
+    <p class="text-danger">未选为在现有数据基础上添加数据，选择将先清除数据库再导入数据</p>
+</div>
+
+<div class="actions ">
+    <%= submit_tag "导入",  :class => "btn btn-primary" %>
+  </div>
+<% end %>
+
+

@@ -1,4 +1,6 @@
 OnyxProductionManagement::Application.routes.draw do
+  get "import_data/import_data_view" => "import_data#import_data_view"
+  post "import_data/upload"
   resources :manufactures
 
   resources :custom_tables do
