@@ -3,7 +3,7 @@
 class DocumentUploader < BaseUploader
     
   def filename
-      @name ||= "#{timestamp}-#{super}" if original_filename.present? and super.present?
+      super
   end
 
   def timestamp
