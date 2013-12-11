@@ -17,9 +17,13 @@ class Materiale
   field :quantity, type: Integer, default: 0
   field :lower_limit, type: Integer, default: 0
   field :role, type: String
+  field :estimated_quantity, type: Integer, default: 0
   
   validates :quantity, numericality: { only_integer: true }
   # validates :onyx_p_n, :type, :p_n, :footprint, :mark, :level, :manufacture, presence: true
+  validates :onyx_p_n, presence: true
+  validates_format_of :onyx_p_n, :with => /\A[a-zA-Z\d ]*\Z/i,
+    message: "only allows letters and number"
   
   has_many :materiales_event, :dependent => :destroy, order: 'created_at DESC'
   has_many :datasheets, :dependent => :destroy
@@ -32,7 +36,7 @@ class Materiale
                      :footprint => "封装", :mark => "丝印", :level => "物料级别", :remark => "备注", :manufacture => "供应商", :quantity => "数量", :lower_limit => "安全库存",
                       :estimated_quantity => "预估数量"}
   
-   def estimated_quantity
+   def estimated_quantity_sum
      estimated_quantity = materiales_event.to_a.sum{ |item| item.quantity}
      if estimated_quantity < 0
        estimated_quantity = 0

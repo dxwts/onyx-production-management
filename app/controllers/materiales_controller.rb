@@ -30,6 +30,7 @@ class MaterialesController < ApplicationController
   # POST /materiales.json
   def create
     @materiale = Materiale.new(materiale_params)
+    @materiale.estimated_quantity = @materiale.quantity
     @event = MaterialesEvent.new
     @event.user = current_user.name
     @event.obj = @materiale.onyx_p_n
@@ -52,6 +53,7 @@ class MaterialesController < ApplicationController
   def update
     @event = MaterialesEvent.new
      if @materiale.quantity != materiale_params[:quantity].to_i
+      @materiale.estimated_quantity = @materiale.estimated_quantity_sum + materiale_params[:quantity]
       @event.obj = @materiale.onyx_p_n
       @event.quantity = materiale_params[:quantity]
       @event.event = "重置"
@@ -92,18 +94,19 @@ class MaterialesController < ApplicationController
     if @quantity < 0
         @quantity = 0
     end
+    @estimated_quantity = @materiale.estimated_quantity_sum + @update_quantity
     @event = MaterialesEvent.new
     @event.obj = @materiale.onyx_p_n
     @event.quantity = @update_quantity
     @event.event =  params[:event]
     @event.remark = params[:remark]
     @event.user = current_user.name
-    # if @materiale.update_attribute(:quantity, @quantity)
+    if @materiale.update_attribute(:estimated_quantity, @estimated_quantity)
     @materiale.materiales_event << @event    
-    respond_to do |format|
-      format.html { redirect_to materiales_url }
-      format.json { head :no_content }
-      # end
+      respond_to do |format|
+        format.html { redirect_to materiales_url }
+        format.json { head :no_content }
+      end
     end
   end
   

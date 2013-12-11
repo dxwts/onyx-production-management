@@ -10,7 +10,7 @@ class ImportDataController < ApplicationController
     @data_file = DataFile.new
     @data_file.data_file = params[:data_file]
     @reset_database = params[:reset_database]
-    if @reset_database == 1
+    if @reset_database.to_i == 1
       Materiale.destroy_all
       MaterialesEvent.destroy_all
     end
@@ -45,6 +45,7 @@ class ImportDataController < ApplicationController
     @materiale.mark = materiale[:mark]
     @materiale.manufacture = materiale[:manufacture]
     @materiale.quantity = 1000
+    @materiale.estimated_quantity = 1000
     @materiale.level = 1
 
     if @materiale.save
