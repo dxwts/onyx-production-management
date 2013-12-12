@@ -95,4 +95,9 @@ body {
     display: inline;
 }
 
-
+#materiale_manufacture_ships .fields {
+    border-style:dotted;
+    border-width:1px;
+    padding:5px .625em; 
+    margin-bottom: 10px;
+}

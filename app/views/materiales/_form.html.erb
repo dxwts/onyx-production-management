@@ -10,7 +10,9 @@
       </ul>
     </div>
   <% end %>
-
+  <div class="form-group">
+      <%= f.hidden_field  :manufacture %>
+  </div>
   <div class="form-group">
     <%= f.label :文石编码 %>
     <%= f.text_field :onyx_p_n, :class =>  "form-control" %>
@@ -52,10 +54,6 @@
     <%= f.text_area :remark, :class =>  "form-control", :rows => '3', :cols => '50' %>
   </div>
   <div class="form-group">
-    <%= f.label :供应商 %>
-    <%= f.text_field :manufacture, :class =>  "form-control" %>
-  </div>
-  <div class="form-group">
     <%= f.label :数量 %>
     <%= f.number_field :quantity, :class =>  "form-control" %>
   </div>
@@ -67,6 +65,25 @@
     <%= f.label :权限 %>
     <%= f.text_field :role, :class =>  "form-control" %>
   </div> -->
+  <div id="materiale_manufacture_ships">
+      <%= f.label :供应商%>
+      <%= f.fields_for :materiale_manufacture_ships do |mm_form|%>
+      <div class="form-group">
+        <%= mm_form.label :供应商 %>
+        <%= mm_form.select :manufacture_id, options_for_select(Manufacture.all.collect{ |m| [m.name, m.id] }, :selected => mm_form.object.manufacture_id), {:include_blank => true}, {:class =>  "form-control"} %>
+      </div>
+      <div class="form-group">
+        <%= mm_form.label :价格%>
+        <%= mm_form.text_field :price, :class =>  "form-control" %>  
+      </div>
+      <div class="form-group">
+        <%= mm_form.label :交期%>
+        <%= mm_form.text_field :delivery_time, :class =>  "form-control" %>  
+      </div>  
+      <%= mm_form.link_to_remove "删除", {:class => "label label-danger"} %>
+      <% end %>
+      <%= f.link_to_add "增加供应商", :materiale_manufacture_ships, :class => "label label-primary" %>
+  </div>
   <div class="form-group" id="datasheet">
       <%= f.label :Datasheet%>
       <%= f.fields_for :datasheets do |datasheet_form| %>
