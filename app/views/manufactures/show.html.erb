@@ -1,24 +1,29 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
 
-<p>
-  <strong>Name:</strong>
-  <%= @manufacture.name %>
-</p>
+    <p id="notice">
+        <%= notice %>
+    </p>
 
-<p>
-  <strong>Address:</strong>
-  <%= @manufacture.address %>
-</p>
+    <p>
+        <strong>Name:</strong>
+        <%= @manufacture.name %>
+    </p>
 
-<p>
-  <strong>Tel:</strong>
-  <%= @manufacture.tel %>
-</p>
+    <p>
+        <strong>Address:</strong>
+        <%= @manufacture.address %>
+    </p>
 
-<p>
-  <strong>Remark:</strong>
-  <%= @manufacture.remark %>
-</p>
+    <p>
+        <strong>Tel:</strong>
+        <%= @manufacture.tel %>
+    </p>
 
-<%= link_to 'Edit', edit_manufacture_path(@manufacture) %> |
-<%= link_to 'Back', manufactures_path %>
+    <p>
+        <strong>Remark:</strong>
+        <%= @manufacture.remark %>
+    </p>
+
+    <%= link_to 'Edit', edit_manufacture_path(@manufacture), :class => "btn btn-default" %> |
+    <%= link_to 'Back', manufactures_path, :class => "btn btn-default" %>
+</div>
