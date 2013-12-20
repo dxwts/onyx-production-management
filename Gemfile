@@ -52,6 +52,12 @@ gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
 
 gem "nested_form"
 
+gem "therubyracer"
+gem "less-rails"
+gem 'twitter-bootstrap-rails', github: 'seyhunak/twitter-bootstrap-rails', branch: 'bootstrap3', ref: "0607d70e520b3716257095c344828509cd751cdd"
+
+gem 'simple_form'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

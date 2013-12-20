@@ -101,3 +101,11 @@ body {
     padding:5px .625em; 
     margin-bottom: 10px;
 }
+
+.project-title {
+    margin-left: 20px;
+}
+
+.body-content {
+    margin-top: 30px;
+}
