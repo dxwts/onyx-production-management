@@ -1,0 +1,28 @@
+<div class="well">
+    <h3>添加Bom料</h3>
+    <%= link_to '返回', @bom, :class => "btn btn-default btn-xs pull-right" %>
+    
+    <table class="table table-condensed">
+        <thead>
+            <tr>
+                <th>文石编码</th>
+                <th>类型</th>
+                <th>描述</th>
+                <th>料号</th>
+                <th>替代料号</th>
+                <th>替代料编码</th>
+                <th>封装</th>
+                <th>丝印</th>
+                <th>物料级别</th>
+                <th>备注</th>
+                <th>供应商</th>
+                <th></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <%= render :partial => "materiales_list_item", :collection => @materiales, :as => :materiale %>
+        </tbody>
+    </table>
+
+</div>

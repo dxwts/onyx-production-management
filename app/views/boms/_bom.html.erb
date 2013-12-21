@@ -1,0 +1,10 @@
+<tr>
+    <td><%= bom.bom_id %></td>
+    <td><%= bom.product.name %></td>
+    <td><%= bom.version %></td>
+    <td><%= bom.state %></td>
+    <td><%= link_to '详细', bom, :class => "btn btn-default btn-xs" %>
+    <%= link_to '编辑', edit_bom_path(bom), :class => "btn btn-default btn-xs" %>
+    <%= link_to '变更', boms_path, :class => "btn btn-default btn-xs" %>
+    <%= link_to '删除', bom, :class => "btn btn-default btn-xs", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>

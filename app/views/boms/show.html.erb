@@ -1,79 +1,60 @@
-<p id="notice"><%= notice %></p>
+<div class="well">
+    <div class="bom-info">
+        <strong>Bom:</strong>
+        <%= @bom.bom_id %>&nbsp;
+        <strong>型号:</strong>
+        <%= @bom.product.name %>
+        &nbsp;
+        <strong>Version:</strong>
+        <%= @bom.version %>
+        &nbsp;
+        <strong>State:</strong>
+        <%= @bom.state %>
+        &nbsp;
+        <%= link_to '编辑', edit_bom_path(@bom), :class => "btn btn-default btn-xs" %>
+        <%= link_to '返回', boms_path, :class => "btn btn-default btn-xs" %>
+        <%= link_to "添加bom料", materiales_list_bom_path(@bom), :class => "btn btn-default btn-xs" %>
+    </div>
+    <div class="bom-materiales-list">
+        <h1>Bom料列表</h1>
+        <table class="table table-condensed">
+            <thead>
+                <tr>
+                    <th>文石编码</th>
+                    <th>类型</th>
+                    <th>描述</th>
+                    <th>料号</th>
+                    <th>替代料号</th>
+                    <th>替代料编码</th>
+                    <th>封装</th>
+                    <th>丝印</th>
+                    <th>物料级别</th>
+                    <th>备注</th>
+                    <th>供应商</th>
+                    <th></th>
+                </tr>
+            </thead>
 
-<p>
-  <strong>Product:</strong>
-  <%= @bom.product %>
-</p>
-
-<p>
-  <strong>Onyx p n:</strong>
-  <%= @bom.onyx_p_n %>
-</p>
-
-<p>
-  <strong>Type:</strong>
-  <%= @bom.type %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @bom.description %>
-</p>
-
-<p>
-  <strong>P n:</strong>
-  <%= @bom.p_n %>
-</p>
-
-<p>
-  <strong>Substitute code:</strong>
-  <%= @bom.substitute_code %>
-</p>
-
-<p>
-  <strong>Substitute p n:</strong>
-  <%= @bom.substitute_p_n %>
-</p>
-
-<p>
-  <strong>Reference:</strong>
-  <%= @bom.reference %>
-</p>
-
-<p>
-  <strong>Footprint:</strong>
-  <%= @bom.footprint %>
-</p>
-
-<p>
-  <strong>Mark:</strong>
-  <%= @bom.mark %>
-</p>
-
-<p>
-  <strong>Substitute mark:</strong>
-  <%= @bom.substitute_mark %>
-</p>
-
-<p>
-  <strong>Remark:</strong>
-  <%= @bom.remark %>
-</p>
-
-<p>
-  <strong>Quantity:</strong>
-  <%= @bom.quantity %>
-</p>
-
-<p>
-  <strong>Version:</strong>
-  <%= @bom.version %>
-</p>
-
-<p>
-  <strong>State:</strong>
-  <%= @bom.state %>
-</p>
-
-<%= link_to 'Edit', edit_bom_path(@bom) %> |
-<%= link_to 'Back', boms_path %>
+            <tbody>
+                <% @bom.bom_materiales.each do |bom_materiale| %>
+                <tr id= "<%= dom_id bom_materiale%>">
+                    <td><%= bom_materiale.materiale.onyx_p_n %></td>
+                    <td><%= bom_materiale.materiale.type %></td>
+                    <td><%= bom_materiale.materiale.description %></td>
+                    <td><%= bom_materiale.materiale.p_n %></td>
+                    <td><%= bom_materiale.materiale.substitute_code %></td>
+                    <td><%= bom_materiale.materiale.substitute_p_n %></td>
+                    <td><%= bom_materiale.materiale.footprint %></td>
+                    <td><%= bom_materiale.materiale.mark %></td>
+                    <td><%= bom_materiale.materiale.level %></td>
+                    <td><%= bom_materiale.materiale.remark %></td>
+                    <td><%= bom_materiale.materiale.manufacture %></td>
+                    <td><%= button_to "修改", boms_path, :class => "btn btn-default btn-xs" %>
+                        <%= button_to "删除", remove_materiale_from_bom_boms_path(:bom_materiale_id => bom_materiale), :method => :get, :remote => true, :class => "btn btn-danger btn-xs", data: { confirm: 'Are you sure?' } %>
+                    </td>
+                </tr>
+            </tbody>
+            <% end %>
+        </table>
+    </div>
+</div>

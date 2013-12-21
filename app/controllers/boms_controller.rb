@@ -1,5 +1,5 @@
 class BomsController < ApplicationController
-  before_action :set_bom, only: [:show, :edit, :update, :destroy]
+  before_action :set_bom, only: [:show, :edit, :update, :destroy, :materiales_list, :add_materiale_to_bom, :remove_materiale_from_materiales_list]
 
   # GET /boms
   # GET /boms.json
@@ -25,7 +25,7 @@ class BomsController < ApplicationController
   # POST /boms.json
   def create
     @bom = Bom.new(bom_params)
-
+    @bom.product_id = bom_params["product_id"]
     respond_to do |format|
       if @bom.save
         format.html { redirect_to @bom, notice: 'Bom was successfully created.' }
@@ -60,6 +60,42 @@ class BomsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def materiales_list
+    @materiales = Materiale.all
+    respond_to do |format|
+      format.html {render action: "materiales_list"}
+    end
+  end
+  
+  def add_materiale_to_bom
+    @materiale = Materiale.find(params[:materiale_id])
+    @bom_materiale = BomMateriale.new
+    @materiale.bom_materiales << @bom_materiale
+    @bom.bom_materiales << @bom_materiale
+    @materiale.add_bom(@bom)
+    respond_to do |format|
+      format.js {@materiale}
+    end
+  end
+  
+  def remove_materiale_from_materiales_list
+    @materiale = Materiale.find(params[:materiale_id])
+    @bom.bom_materiales.find_by(:materiale_id => params[:materiale_id]).destroy
+    @materiale.remove_bom(@bom)
+    respond_to do |format|
+      format.js {@materiale}
+    end
+  end
+  
+  def remove_materiale_from_bom
+      @bom_materiale = BomMateriale.find(params[:bom_materiale_id])
+      @bom_materiale.materiale.remove_bom(@bom_materiale.bom)
+      @bom_materiale.destroy
+      respond_to do |format|
+      format.js {@bom_materiale}
+    end   
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -69,6 +105,6 @@ class BomsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def bom_params
-      params.require(:bom).permit(:product, :onyx_p_n, :type, :description, :p_n, :substitute_code, :substitute_p_n, :reference, :footprint, :mark, :substitute_mark, :remark, :quantity, :version, :state)
+      params.require(:bom).permit(:bom_id, :version, :state, :product_id, :materiale_id)
     end
 end

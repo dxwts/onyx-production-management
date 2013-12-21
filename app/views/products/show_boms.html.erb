@@ -1,1 +1,19 @@
-<h3><%=@product.name%></h3>
+<div class="container">
+<h3><%= @product.name%> Bom列表</h3>
+
+    <table class="table table-condensed">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>型号</th>
+                <th>版本</th>
+                <th>状态</th>
+                <th></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <%= render @product.boms%>
+        </tbody>
+    </table>
+</div>

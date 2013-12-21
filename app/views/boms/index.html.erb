@@ -1,55 +1,24 @@
-<h1>Listing boms</h1>
+<div class="container">
+    <h1>Bom列表</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Product</th>
-      <th>Onyx p n</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>P n</th>
-      <th>Substitute code</th>
-      <th>Substitute p n</th>
-      <th>Reference</th>
-      <th>Footprint</th>
-      <th>Mark</th>
-      <th>Substitute mark</th>
-      <th>Remark</th>
-      <th>Quantity</th>
-      <th>Version</th>
-      <th>State</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+    <table class="table table-condensed">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>型号</th>
+                <th>版本</th>
+                <th>状态</th>
+                <th></th>
+            </tr>
+        </thead>
 
-  <tbody>
-    <% @boms.each do |bom| %>
-      <tr>
-        <td><%= bom.product %></td>
-        <td><%= bom.onyx_p_n %></td>
-        <td><%= bom.type %></td>
-        <td><%= bom.description %></td>
-        <td><%= bom.p_n %></td>
-        <td><%= bom.substitute_code %></td>
-        <td><%= bom.substitute_p_n %></td>
-        <td><%= bom.reference %></td>
-        <td><%= bom.footprint %></td>
-        <td><%= bom.mark %></td>
-        <td><%= bom.substitute_mark %></td>
-        <td><%= bom.remark %></td>
-        <td><%= bom.quantity %></td>
-        <td><%= bom.version %></td>
-        <td><%= bom.state %></td>
-        <td><%= link_to 'Show', bom %></td>
-        <td><%= link_to 'Edit', edit_bom_path(bom) %></td>
-        <td><%= link_to 'Destroy', bom, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        <tbody>
+            <%= render @boms%>
+        </tbody>
+    </table>
 
-<br>
+    <br>
 
-<%= link_to 'New Bom', new_bom_path %>
+    <%= link_to 'New Bom', new_bom_path %>
+
+</div>

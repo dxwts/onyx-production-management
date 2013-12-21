@@ -1,0 +1,57 @@
+<h1>Listing bom_materiales</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Onyx p n</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>P n</th>
+      <th>Substitute code</th>
+      <th>Substitute p n</th>
+      <th>Reference</th>
+      <th>Footprint</th>
+      <th>Mark</th>
+      <th>Substitute mark</th>
+      <th>Remark</th>
+      <th>Manufacture</th>
+      <th>Quantity</th>
+      <th>Document</th>
+      <th>Version</th>
+      <th>State</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bom_materiales.each do |bom_materiale| %>
+      <tr>
+        <td><%= bom_materiale.onyx_p_n %></td>
+        <td><%= bom_materiale.type %></td>
+        <td><%= bom_materiale.description %></td>
+        <td><%= bom_materiale.p_n %></td>
+        <td><%= bom_materiale.substitute_code %></td>
+        <td><%= bom_materiale.substitute_p_n %></td>
+        <td><%= bom_materiale.reference %></td>
+        <td><%= bom_materiale.footprint %></td>
+        <td><%= bom_materiale.mark %></td>
+        <td><%= bom_materiale.substitute_mark %></td>
+        <td><%= bom_materiale.remark %></td>
+        <td><%= bom_materiale.manufacture %></td>
+        <td><%= bom_materiale.quantity %></td>
+        <td><%= bom_materiale.document %></td>
+        <td><%= bom_materiale.version %></td>
+        <td><%= bom_materiale.state %></td>
+        <td><%= link_to 'Show', bom_materiale %></td>
+        <td><%= link_to 'Edit', edit_bom_materiale_path(bom_materiale) %></td>
+        <td><%= link_to 'Destroy', bom_materiale, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bom materiale', new_bom_materiale_path %>

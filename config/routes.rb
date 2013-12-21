@@ -1,4 +1,17 @@
 OnyxProductionManagement::Application.routes.draw do
+  resources :bom_materiales
+
+  resources :boms do
+    member do
+      get "add_materiale_to_bom"
+      get "materiales_list"
+      get "remove_materiale_from_materiales_list"
+    end
+    collection do
+      get "remove_materiale_from_bom"
+    end
+  end
+
   get "import_data/import_data_view" => "import_data#import_data_view"
   post "import_data/upload"
   resources :manufactures
@@ -25,8 +38,6 @@ OnyxProductionManagement::Application.routes.draw do
   resources :assembly_boms
 
   resources :bom_events
-
-  resources :boms
 
   resources :orders
 

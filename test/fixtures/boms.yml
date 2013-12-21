@@ -1,35 +1,12 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  product: MyString
-  onyx_p_n: MyString
-  type: 
-  description: MyString
-  p_n: MyString
-  substitute_code: MyString
-  substitute_p_n: MyString
-  reference: MyString
-  footprint: MyString
-  mark: MyString
-  substitute_mark: MyString
-  remark: MyString
-  quantity: 1
-  version: MyString
-  state: MyString
+  bom_id: 123456789
+  version: 1.0.0
+  product_id: 987654321
+  state: 1
 
 two:
-  product: MyString
-  onyx_p_n: MyString
-  type: 
-  description: MyString
-  p_n: MyString
-  substitute_code: MyString
-  substitute_p_n: MyString
-  reference: MyString
-  footprint: MyString
-  mark: MyString
-  substitute_mark: MyString
-  remark: MyString
-  quantity: 1
+  bom_id: MyString
   version: MyString
   state: MyString

@@ -1,0 +1,18 @@
+<tr id= "<%= dom_id materiale%>">
+    <td><%= materiale.onyx_p_n %></td>
+    <td><%= materiale.type %></td>
+    <td><%= materiale.description %></td>
+    <td><%= materiale.p_n %></td>
+    <td><%= materiale.substitute_code %></td>
+    <td><%= materiale.substitute_p_n %></td>
+    <td><%= materiale.footprint %></td>
+    <td><%= materiale.mark %></td>
+    <td><%= materiale.level %></td>
+    <td><%= materiale.remark %></td>
+    <td><%= materiale.manufacture %></td>
+    <% if materiale.belongs_the_bom?(@bom) %>
+    <td class="control-td"> <%= button_to "删除", remove_materiale_from_materiales_list_bom_path(@bom, :materiale_id => materiale.id), :method => :get, :remote => true, :class => "btn btn-danger btn-xs" %> </td>
+    <% else %>
+    <td class="control-td"> <%= button_to "添加", add_materiale_to_bom_bom_path(@bom, :materiale_id => materiale.id), :method => :get, :remote => true, :class => "btn btn-success btn-xs" %> </td>
+    <% end %>
+</tr>

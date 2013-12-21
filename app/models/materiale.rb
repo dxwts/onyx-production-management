@@ -18,6 +18,7 @@ class Materiale
   field :lower_limit, type: Integer, default: 0
   field :role, type: String
   field :estimated_quantity, type: Integer, default: 0
+  field :boms_id, type: Array, :default => [] 
   
   validates :quantity, numericality: { only_integer: true }
   # validates :onyx_p_n, :type, :p_n, :footprint, :mark, :level, :manufacture, presence: true
@@ -29,6 +30,7 @@ class Materiale
   has_many :datasheets, :dependent => :destroy
   has_many :acknowledgements, :dependent => :destroy
   has_many :materiale_manufacture_ships, :dependent => :destroy
+  has_many :bom_materiales, :dependent => :destroy
   accepts_nested_attributes_for :datasheets, :acknowledgements, :materiale_manufacture_ships, :allow_destroy => true
   
   
@@ -43,4 +45,19 @@ class Materiale
      end
      estimated_quantity
    end
+   
+   def belongs_the_bom?(bom)
+    return false if bom.blank?
+    self.boms_id.include?(bom.id)
+  end
+
+  def add_bom(bom)
+    self.push(boms_id: bom.id)
+    self.touch
+  end
+
+  def remove_bom(bom)
+    self.pull(boms_id: bom.id)
+    self.touch
+  end
 end

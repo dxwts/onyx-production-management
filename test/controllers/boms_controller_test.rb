@@ -18,7 +18,7 @@ class BomsControllerTest < ActionController::TestCase
 
   test "should create bom" do
     assert_difference('Bom.count') do
-      post :create, bom: { description: @bom.description, footprint: @bom.footprint, mark: @bom.mark, onyx_p_n: @bom.onyx_p_n, p_n: @bom.p_n, product: @bom.product, quantity: @bom.quantity, reference: @bom.reference, remark: @bom.remark, state: @bom.state, substitute_code: @bom.substitute_code, substitute_mark: @bom.substitute_mark, substitute_p_n: @bom.substitute_p_n, type: @bom.type, version: @bom.version }
+      post :create, bom: { bom_id: @bom.bom_id, state: @bom.state, version: @bom.version, product_id: @bom.product_id }
     end
 
     assert_redirected_to bom_path(assigns(:bom))
@@ -35,7 +35,7 @@ class BomsControllerTest < ActionController::TestCase
   end
 
   test "should update bom" do
-    patch :update, id: @bom, bom: { description: @bom.description, footprint: @bom.footprint, mark: @bom.mark, onyx_p_n: @bom.onyx_p_n, p_n: @bom.p_n, product: @bom.product, quantity: @bom.quantity, reference: @bom.reference, remark: @bom.remark, state: @bom.state, substitute_code: @bom.substitute_code, substitute_mark: @bom.substitute_mark, substitute_p_n: @bom.substitute_p_n, type: @bom.type, version: @bom.version }
+    patch :update, id: @bom, bom: { bom_id: @bom.bom_id, state: @bom.state, version: @bom.version, product_id: @bom.product_id }
     assert_redirected_to bom_path(assigns(:bom))
   end
 
