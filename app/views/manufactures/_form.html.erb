@@ -1,4 +1,4 @@
-<%= form_for(@manufacture) do |f| %>
+<%= nested_form_for(@manufacture, :html=>{:multipart => true }) do |f| %>
   <% if @manufacture.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@manufacture.errors.count, "error") %> prohibited this manufacture from being saved:</h2>
@@ -26,6 +26,20 @@
   <div class="form-group">
     <%= f.label :remark %><br>
     <%= f.text_area :remark , :class => "form-control", :rows => "10", :cols => "50" %>
+  </div>
+  <div>
+      <%= f.fields_for :manufacture_files do |manufacture_file_form| %>
+      <div class="form-group">
+        <%= manufacture_file_form.label :type%>
+        <%= manufacture_file_form.text_field :type, :class => "form-control"%>
+      </div>
+      <div class="form-group">
+        <%= manufacture_file_form.file_field :manufacture_file %>
+        <%= link_to manufacture_file_form.object.manufacture_file_filename, manufacture_file_form.object.manufacture_file_url if manufacture_file_form.object.manufacture_file? %>
+      </div>
+        <%= manufacture_file_form.link_to_remove "删除" %>
+      <% end %>
+      <%= f.link_to_add "增加文件", :manufacture_files, :class => "text-primary" %>
   </div>
   <div class="actions">
     <%= f.submit :class => "btn btn-primary"%>

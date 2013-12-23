@@ -69,6 +69,6 @@ class ManufacturesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def manufacture_params
-      params.require(:manufacture).permit(:name, :address, :tel, :remark)
+      params.require(:manufacture).permit(:name, :address, :tel, :remark, :manufacture_files_attributes => [:id, :type, :manufacture_file, :_destroy])
     end
 end
