@@ -15,7 +15,11 @@
         <td <%= is_need_hidden(columns.include?("mark"))%>><%= materiale.mark %></td>
         <td <%= is_need_hidden(columns.include?("level"))%>><%= materiale.level %></td>
         <td <%= is_need_hidden(columns.include?("remark"))%>><%= materiale.remark %></td>
-        <td <%= is_need_hidden(columns.include?("manufacture"))%>><%= materiale.manufacture %></td>
+        <td <%= is_need_hidden(columns.include?("manufacture"))%>>
+            <% if materiale.materiale_manufacture_ships.size > 0 %>
+                <a href="<%= manufacture_path(materiale.materiale_manufacture_ships[0].manufacture) %>"><%= materiale.materiale_manufacture_ships[0].manufacture.name %></a>
+            <% end %>
+        </td>
         <td <%= is_need_hidden(columns.include?("quantity"))%>><%= materiale.quantity %></td>
         <td <%= is_need_hidden(columns.include?("estimated_quantity"))%>><%= materiale.estimated_quantity %></td>
         <td <%= is_need_hidden(columns.include?("lower_limit"))%>><%= materiale.lower_limit %></td>

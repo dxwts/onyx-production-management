@@ -9,7 +9,7 @@
     <td><%= materiale.mark %></td>
     <td><%= materiale.level %></td>
     <td><%= materiale.remark %></td>
-    <td><%= materiale.manufacture %></td>
+    <td><%= materiale.materiale_manufacture_ships[0].manufacture.name if materiale.materiale_manufacture_ships.size > 0 %></td>
     <% if materiale.belongs_the_bom?(@bom) %>
     <td class="control-td"> <%= button_to "删除", remove_materiale_from_materiales_list_bom_path(@bom, :materiale_id => materiale.id), :method => :get, :remote => true, :class => "btn btn-danger btn-xs" %> </td>
     <% else %>

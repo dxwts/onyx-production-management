@@ -62,7 +62,9 @@
 
                     <p>
                         <strong>供应商:</strong>
-                        <%= @materiale.manufacture %>
+                        <% @materiale.materiale_manufacture_ships.each do |m_m_ship| %>
+                            <a href="<%= manufacture_path(m_m_ship.manufacture) %>"><%= m_m_ship.manufacture.name %></a>
+                        <% end %>
                     </p>
 
                     <p>
