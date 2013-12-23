@@ -1,9 +1,5 @@
 <div class="container">
-
-    <p id="notice">
-        <%= notice %>
-    </p>
-
+<div class="well">
     <p>
         <strong>Name:</strong>
         <%= @manufacture.name %>
@@ -20,10 +16,22 @@
     </p>
 
     <p>
-        <strong>Remark:</strong>
+        <strong>Level:</strong>
+        <%= @manufacture.level %>
+    </p>
+
+    <p>
+        <strong>Remark:</strong><br />
         <%= @manufacture.remark %>
+    </p>
+    <p>
+        <strong>Document:</strong> <br />
+        <% @manufacture.manufacture_files.each do |file| %>
+            <%= link_to file.manufacture_file_filename, file.manufacture_file_url %><br />
+        <% end %>
     </p>
 
     <%= link_to 'Edit', edit_manufacture_path(@manufacture), :class => "btn btn-default" %> |
     <%= link_to 'Back', manufactures_path, :class => "btn btn-default" %>
+</div>
 </div>

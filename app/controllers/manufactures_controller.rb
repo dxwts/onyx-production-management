@@ -60,6 +60,15 @@ class ManufacturesController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def search_manufactures
+    column = params[:search_category]
+    keyword = params[:search_params]
+    @manufactures = Manufacture.where(column => /#{keyword}/i).all
+    respond_to do |format|
+      format.html { render action: "index" }
+    end
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -69,6 +78,6 @@ class ManufacturesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def manufacture_params
-      params.require(:manufacture).permit(:name, :address, :tel, :remark, :manufacture_files_attributes => [:id, :type, :manufacture_file, :_destroy])
+      params.require(:manufacture).permit(:name, :address, :tel, :level, :tags, :remark, :manufacture_files_attributes => [:id, :type, :manufacture_file, :_destroy])
     end
 end

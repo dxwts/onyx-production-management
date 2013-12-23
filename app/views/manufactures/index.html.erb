@@ -1,22 +1,47 @@
 <div class="well">
-<h1>供应商列表</h1>
-<%= link_to '添加供应商', new_manufacture_path, :class => "btn btn-default" %>
-
-<div class="row">
-    <% @manufactures.each do |manufacture| %>
-    <div class="col-xs-6 col-md-3">
-        <div class="thumbnail">
-            <h4><%= manufacture.name %></h4>
-            <p>地址：<%= manufacture.address %></p>
-            <p>电话：<%= manufacture.tel %></p>
-            <p>备注：<%= manufacture.remark %></p>
-            <div>
-                <%= link_to '详细', manufacture, :method => :get, :class => "btn btn-default btn-xs " %>
-                <%= link_to '编辑', edit_manufacture_path(manufacture), :method => :get, :class => "btn btn-default btn-xs" %>
-                <%= link_to '删除', manufacture, method: :delete, :class => "btn btn-default btn-xs", data: { confirm: 'Are you sure?' }%>
+    <h1>供应商列表</h1>
+    <div class="tools-bar" >
+    <%= link_to '添加供应商', new_manufacture_path, :class => "btn btn-default pull-right" %>
+        <div class="row">
+            <%= form_tag(search_manufactures_path) do%>
+            <div class="col-xs-1">
+                <%= select_tag( 'search_category', options_for_select({'名字' => 'name'}), {:class => 'form-control'}) %>
             </div>
+            
+            <div class="input-group col-xs-3">
+                <%= text_field_tag :search_params, params[:search_params], :class => 'form-control' %>
+                <span class="input-group-btn">
+                    <%= submit_tag "搜索", :class => "btn btn-default", :id => "search_button" %>
+                </span>
+            </div>
+        <%end%>
         </div>
     </div>
-    <% end %>
-</div>
+
+    <div class="row">
+        <% @manufactures.each do |manufacture| %>
+        <div class="col-xs-6 col-md-3">
+            <div class="thumbnail">
+                <h4><%= manufacture.name %></h4>
+                <p>
+                    地址：<%= manufacture.address %>
+                </p>
+                <p>
+                    电话：<%= manufacture.tel %>
+                </p>
+                <p>
+                    Level：<%= manufacture.level %>
+                </p>
+                <p>
+                    备注：<%= manufacture.remark %>
+                </p>
+                <div>
+                    <%= link_to '详细', manufacture, :method => :get, :class => "btn btn-default btn-xs " %>
+                    <%= link_to '编辑', edit_manufacture_path(manufacture), :method => :get, :class => "btn btn-default btn-xs" %>
+                    <%= link_to '删除', manufacture, method: :delete, :class => "btn btn-default btn-xs", data: { confirm: 'Are you sure?' }%>
+                </div>
+            </div>
+        </div>
+        <% end %>
+    </div>
 </div>

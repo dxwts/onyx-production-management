@@ -4,6 +4,8 @@ class Manufacture
   field :address, type: String
   field :tel, type: String
   field :remark, type: String
+  field :level, type: String
+  field :tags, type: Array
   
   has_many :manufacture_files, :dependent => :destroy
   has_many :materiale_manufacture_ships, :dependent => :destroy
