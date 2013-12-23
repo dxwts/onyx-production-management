@@ -48,6 +48,7 @@ gem "nokogiri", "~> 1.6.0"
 
 gem 'carrierwave'
 gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
+gem 'mini_magick'
 
 
 gem "nested_form"

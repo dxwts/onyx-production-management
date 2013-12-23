@@ -91,7 +91,7 @@
         <%= link_to datasheet_form.object.datasheet_filename, datasheet_form.object.datasheet_url if datasheet_form.object.datasheet? %>
         <%= datasheet_form.link_to_remove "删除"   %>
       <% end %>
-      <%= f.link_to_add "增加文件", :datasheets, :class => "label label-primary" %>
+      <%= f.link_to_add "增加文件", :datasheets, :class => "text-primary" %>
   </div>
   
   <div class="form-group" id="acknowledgement">
@@ -101,8 +101,19 @@
         <%= link_to acknowledgement_form.object.acknowledgement_filename, acknowledgement_form.object.acknowledgement_url if acknowledgement_form.object.acknowledgement? %>
         <%= acknowledgement_form.link_to_remove "删除" %>
       <% end %>
-      <%= f.link_to_add "增加文件", :acknowledgements, :class => "label label-primary" %>
+      <%= f.link_to_add "增加文件", :acknowledgements, :class => "text-primary" %>
   </div>
+  
+  <div class="form-group" id="materiale_pic">
+      <%= f.label :图片 %>
+      <%= f.fields_for :materiale_pics do |materiale_pic_form| %>
+        <%= materiale_pic_form.file_field :materiale_pic %>
+        <%= link_to materiale_pic_form.object.materiale_pic_filename, materiale_pic_form.object.materiale_pic_url if materiale_pic_form.object.materiale_pic? %>
+        <%= materiale_pic_form.link_to_remove "删除" %>
+      <% end %>
+      <%= f.link_to_add "增加文件", :materiale_pics, :class => "text-primary" %>
+  </div>
+  
   <div class="actions ">
     <%= f.submit "保存",  :class => "btn btn-primary" %>
   </div>

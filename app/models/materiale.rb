@@ -31,7 +31,8 @@ class Materiale
   has_many :acknowledgements, :dependent => :destroy
   has_many :materiale_manufacture_ships, :dependent => :destroy
   has_many :bom_materiales, :dependent => :destroy
-  accepts_nested_attributes_for :datasheets, :acknowledgements, :materiale_manufacture_ships, :allow_destroy => true
+  has_many :materiale_pics, :dependent => :destroy
+  accepts_nested_attributes_for :datasheets, :acknowledgements, :materiale_manufacture_ships, :materiale_pics, :allow_destroy => true
   
   
   TABLE_MAP = {:onyx_p_n => "文石编码", :type => "类型", :description => "描述", :p_n => "料号", :substitute_code => "替代料号", :substitute_p_n => "替代料编号",

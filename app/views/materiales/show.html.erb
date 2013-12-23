@@ -92,6 +92,13 @@
                             <%= link_to acknowledgement.acknowledgement_filename, acknowledgement.acknowledgement_url%><br />
                         <% end %>
                     </p>
+                    <p>
+                        <strong>图片：</strong><br />
+                        <%= materiale_pic_tag(@materiale, :big)[0] %><br />
+                        <% @materiale.materiale_pics.each do |materiale_pic| %>
+                            <%= link_to materiale_pic.materiale_pic_filename, materiale_pic.materiale_pic_url%><br />
+                        <% end %>
+                    </p>
                     <%= link_to '编辑', edit_materiale_path(@materiale), {:class => "btn btn-default"}%> |
                     <%= link_to '返回', materiales_path, {:class => "btn btn-default"} %>
 
